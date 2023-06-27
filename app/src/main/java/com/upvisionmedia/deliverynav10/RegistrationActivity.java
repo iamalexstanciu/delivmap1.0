@@ -15,7 +15,6 @@ public class RegistrationActivity extends Activity {
     private EditText passwordEditText;
     private EditText confirmPasswordEditText;
     private Button registerButton;
-
     private DatabaseHelper databaseHelper;
 
     @Override
