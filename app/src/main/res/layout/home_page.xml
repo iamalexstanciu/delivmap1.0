@@ -1,39 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <fragment
         android:id="@+id/mapFragment"
-        android:name="com.google.android.gms.maps.MapFragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/destinationLayout"
-        android:layout_alignParentTop="true" />
+        android:layout_height="match_parent" />
 
-    <LinearLayout
-        android:id="@+id/destinationLayout"
+    <EditText
+        android:id="@+id/destinationEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
+        android:layout_margin="16dp"
+        android:hint="Enter destination"
+        android:inputType="text" />
 
-        <EditText
-            android:id="@+id/destinationEditText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Enter destination"
-            android:inputType="text" />
-
-        <Button
-            android:id="@+id/goButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go" />
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/goButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/destinationEditText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Go" />
 
 </RelativeLayout>

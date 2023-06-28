@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Start the sign-in activity
-                Intent intent = new Intent(MainActivity.this, InfoDisplayActivity.class);
+                Intent intent = new Intent(MainActivity.this, HomePageActivity.class);
                 startActivity(intent);
             }
 

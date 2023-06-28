@@ -44,7 +44,6 @@ public class LoginActivity extends Activity {
                 if (isValidCredentials(email, password)) {
                     Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
 
-
                     Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
                     startActivity(intent);
                     finish();
