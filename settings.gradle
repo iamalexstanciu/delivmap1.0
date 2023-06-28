@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "DeliveryNav1.0"
+rootProject.name = "DelivMap1.0"
 include ':app'

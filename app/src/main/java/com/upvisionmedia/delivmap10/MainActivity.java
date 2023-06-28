@@ -1,4 +1,4 @@
-package com.upvisionmedia.deliverynav10;
+package com.upvisionmedia.delivmap10;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.upvisionmedia.deliverynav10.data.HomePageActivity;
-import com.upvisionmedia.deliverynav10.service.SignInActivity;
+import com.upvisionmedia.delivmap10.data.HomePageActivity;
+import com.upvisionmedia.delivmap10.service.SignInActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         signInButton = findViewById(R.id.signInButton);
         infoButton = findViewById(R.id.infoButton);
 
-        welcomeText.setText("Welcome to DeliveryNav");
+        welcomeText.setText("Welcome to DelivMap");
 
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override

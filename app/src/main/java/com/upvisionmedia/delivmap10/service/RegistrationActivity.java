@@ -1,4 +1,4 @@
-package com.upvisionmedia.deliverynav10.service;
+package com.upvisionmedia.delivmap10.service;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.upvisionmedia.deliverynav10.R;
+import com.upvisionmedia.delivmap10.R;
 
 public class RegistrationActivity extends Activity {
 

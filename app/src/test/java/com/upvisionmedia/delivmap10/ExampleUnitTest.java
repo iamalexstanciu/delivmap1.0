@@ -1,4 +1,4 @@
-package com.upvisionmedia.deliverynav10;
+package com.upvisionmedia.delivmap10;
 
 import org.junit.Test;
 

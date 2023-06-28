@@ -1,4 +1,4 @@
-package com.upvisionmedia.deliverynav10.service;
+package com.upvisionmedia.delivmap10.service;
 
 import android.content.ContentValues;
 import android.content.Context;

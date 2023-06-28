@@ -1,7 +1,6 @@
-package com.upvisionmedia.deliverynav10;
+package com.upvisionmedia.delivmap10;
 
 import android.os.Bundle;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 

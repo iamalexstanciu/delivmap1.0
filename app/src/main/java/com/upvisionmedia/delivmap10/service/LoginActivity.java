@@ -1,10 +1,10 @@
-package com.upvisionmedia.deliverynav10.service;
+package com.upvisionmedia.delivmap10.service;
 
 
 
-import static com.upvisionmedia.deliverynav10.service.DatabaseHelper.COLUMN_EMAIL;
-import static com.upvisionmedia.deliverynav10.service.DatabaseHelper.COLUMN_PASSWORD;
-import static com.upvisionmedia.deliverynav10.service.DatabaseHelper.TABLE_USERS;
+import static com.upvisionmedia.delivmap10.service.DatabaseHelper.COLUMN_EMAIL;
+import static com.upvisionmedia.delivmap10.service.DatabaseHelper.COLUMN_PASSWORD;
+import static com.upvisionmedia.delivmap10.service.DatabaseHelper.TABLE_USERS;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,8 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.upvisionmedia.deliverynav10.data.HomePageActivity;
-import com.upvisionmedia.deliverynav10.R;
+import com.upvisionmedia.delivmap10.data.HomePageActivity;
+import com.upvisionmedia.delivmap10.R;
 
 
 public class LoginActivity extends Activity {

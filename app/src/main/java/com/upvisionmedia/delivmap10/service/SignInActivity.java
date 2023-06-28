@@ -1,4 +1,4 @@
-package com.upvisionmedia.deliverynav10.service;
+package com.upvisionmedia.delivmap10.service;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,8 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.upvisionmedia.deliverynav10.MainActivity;
-import com.upvisionmedia.deliverynav10.R;
+import com.upvisionmedia.delivmap10.MainActivity;
+import com.upvisionmedia.delivmap10.R;
 
 public class SignInActivity extends AppCompatActivity {
 
