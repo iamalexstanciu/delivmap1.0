@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.upvisionmedia.deliverynav10.data.HomePageActivity;
+import com.upvisionmedia.deliverynav10.service.SignInActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button signInButton;

@@ -1,4 +1,4 @@
-package com.upvisionmedia.deliverynav10;
+package com.upvisionmedia.deliverynav10.data;
 
 import android.location.Address;
 import android.location.Geocoder;
@@ -15,6 +15,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.upvisionmedia.deliverynav10.R;
 
 import java.io.IOException;
 import java.util.List;

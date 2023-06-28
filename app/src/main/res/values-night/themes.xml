@@ -2,6 +2,10 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.DeliveryNav10" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorAccent">@color/white</item>
+<!--        <item name="android:windowBackground">@drawable/my_custom_background</item>-->
+<!--        <item name="android:textColorPrimary">@color/my_text_primary</item>-->
+        <!-- Add more customizations as needed -->
     </style>
 </resources>

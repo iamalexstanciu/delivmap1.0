@@ -1,10 +1,10 @@
-package com.upvisionmedia.deliverynav10;
+package com.upvisionmedia.deliverynav10.service;
 
 
 
-import static com.upvisionmedia.deliverynav10.DatabaseHelper.COLUMN_EMAIL;
-import static com.upvisionmedia.deliverynav10.DatabaseHelper.COLUMN_PASSWORD;
-import static com.upvisionmedia.deliverynav10.DatabaseHelper.TABLE_USERS;
+import static com.upvisionmedia.deliverynav10.service.DatabaseHelper.COLUMN_EMAIL;
+import static com.upvisionmedia.deliverynav10.service.DatabaseHelper.COLUMN_PASSWORD;
+import static com.upvisionmedia.deliverynav10.service.DatabaseHelper.TABLE_USERS;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,6 +15,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.upvisionmedia.deliverynav10.data.HomePageActivity;
+import com.upvisionmedia.deliverynav10.R;
 
 
 public class LoginActivity extends Activity {

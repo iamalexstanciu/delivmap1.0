@@ -30,19 +30,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomePageActivity"
+            android:name=".data.HomePageActivity"
             android:label="Login">
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".service.LoginActivity"
             android:label="Login">
         </activity>
         <activity
-            android:name=".SignInActivity"
+            android:name=".service.SignInActivity"
             android:label="Sign In">
         </activity>
         <activity
-            android:name=".RegistrationActivity"
+            android:name=".service.RegistrationActivity"
             android:label="Registration">
         </activity>
         <activity
