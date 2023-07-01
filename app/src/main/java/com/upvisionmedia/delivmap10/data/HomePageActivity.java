@@ -1,24 +1,27 @@
 package com.upvisionmedia.delivmap10.data;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.upvisionmedia.delivmap10.R;
 
 import java.io.IOException;
@@ -27,121 +30,128 @@ import java.util.List;
 
 public class HomePageActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-    private GoogleMap googleMap;
-    private List<String> destinations;
-    private DestinationAdapter destinationAdapter;
+    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
+
+    private GoogleMap mMap;
+    private FusedLocationProviderClient fusedLocationProviderClient;
+    private EditText destinationInput;
+    private final List<String> destinations = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
 
-        destinations = new ArrayList<>();
-        destinationAdapter = new DestinationAdapter(destinations);
+        // Initialize views
+        destinationInput = findViewById(R.id.destination_input);
+        Button goButton = findViewById(R.id.go_button);
+        Button addButton = findViewById(R.id.add_button);
 
-        RecyclerView destinationRecyclerView = findViewById(R.id.destinationRecyclerView);
-        destinationRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        destinationRecyclerView.setAdapter(destinationAdapter);
-
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.mapFragment);
+        // Initialize Google Maps
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map_fragment);
+        assert mapFragment != null;
         mapFragment.getMapAsync(this);
 
-        Button goButton = findViewById(R.id.goButton);
-        goButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!destinations.isEmpty()) {
-                    for (String destination : destinations) {
-                        findDestination(destination);
-                    }
-                } else {
-                    Toast.makeText(HomePageActivity.this, "Please enter at least one destination", Toast.LENGTH_SHORT).show();
-                }
+        // Initialize FusedLocationProviderClient
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+
+        // Set click listener for "Go" button
+        goButton.setOnClickListener(v -> {
+            String destination = destinationInput.getText().toString().trim();
+            if (!destination.isEmpty()) {
+                destinations.add(destination);
+                destinationInput.setText("");
+                calculateRoute();
+            } else {
+                Toast.makeText(HomePageActivity.this, "Please enter a destination", Toast.LENGTH_SHORT).show();
             }
         });
 
-        Button addDestinationButton = findViewById(R.id.addDestinationButton);
-        addDestinationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addDestinationField();
+        // Set click listener for "+" button
+        addButton.setOnClickListener(v -> {
+            String destination = destinationInput.getText().toString().trim();
+            if (!destination.isEmpty()) {
+                destinations.add(destination);
+                destinationInput.setText("");
+                Toast.makeText(HomePageActivity.this, "Destination added", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(HomePageActivity.this, "Please enter a destination", Toast.LENGTH_SHORT).show();
             }
         });
-
-        addDestinationField();
     }
 
     @Override
-    public void onMapReady(GoogleMap map) {
-        googleMap = map;
-        LatLng defaultLocation = new LatLng(37.7749, -122.4194); // Default location (e.g., San Francisco)
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, 12f));
-    }
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
 
-    private void findDestination(String destination) {
-        Geocoder geocoder = new Geocoder(this);
-        try {
-            List<Address> addressList = geocoder.getFromLocationName(destination, 1);
-            if (addressList != null && addressList.size() > 0) {
-                Address address = addressList.get(0);
-                LatLng destinationLatLng = new LatLng(address.getLatitude(), address.getLongitude());
-                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(destinationLatLng, 12f));
-            } else {
-                Toast.makeText(this, "Destination not found: " + destination, Toast.LENGTH_SHORT).show();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            Toast.makeText(this, "Error finding destination: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        // Check location permission
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            // Enable current location button
+            mMap.setMyLocationEnabled(true);
+            getCurrentLocation();
+        } else {
+            // Request location permission
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
         }
     }
 
-
-    private void addDestinationField() {
-        destinations.add("");
-        destinationAdapter.notifyItemInserted(destinations.size() - 1);
-    }
-
-    private class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.ViewHolder> {
-
-        private List<String> destinations;
-
-        public DestinationAdapter(List<String> destinations) {
-            this.destinations = destinations;
-        }
-
-        @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.destination_item, parent, false);
-            return new ViewHolder(view);
-        }
-
-        @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
-            String destination = destinations.get(position);
-            holder.destinationEditText.setText(destination);
-            holder.destinationEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-                @Override
-                public void onFocusChange(View v, boolean hasFocus) {
-                    if (!hasFocus) {
-                        destinations.set(holder.getAdapterPosition(), holder.destinationEditText.getText().toString());
-                    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    mMap.setMyLocationEnabled(true);
+                    getCurrentLocation();
                 }
-            });
-        }
-
-        @Override
-        public int getItemCount() {
-            return destinations.size();
-        }
-
-        public class ViewHolder extends RecyclerView.ViewHolder {
-            EditText destinationEditText;
-
-            public ViewHolder(View itemView) {
-                super(itemView);
-                destinationEditText = itemView.findViewById(R.id.destinationEditText);
+            } else {
+                // Permission denied
+                Toast.makeText(this, "Location permission denied", Toast.LENGTH_SHORT).show();
             }
         }
     }
+
+    private void getCurrentLocation() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+            return;
+        }
+        fusedLocationProviderClient.getLastLocation().addOnSuccessListener(this, location -> {
+            if (location != null) {
+                double latitude = location.getLatitude();
+                double longitude = location.getLongitude();
+                LatLng latLng = new LatLng(latitude, longitude);
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f));
+            }
+        });
+    }
+
+    private void calculateRoute() {
+        // Clear existing markers
+        mMap.clear();
+
+        // Add destination markers
+        Geocoder geocoder = new Geocoder(this);
+        for (String destination : destinations) {
+            try {
+                List<Address> addresses = geocoder.getFromLocationName(destination, 1);
+                if (addresses != null && addresses.size() > 0) {
+                    Address address = addresses.get(0);
+                    double latitude = address.getLatitude();
+                    double longitude = address.getLongitude();
+                    LatLng latLng = new LatLng(latitude, longitude);
+                    mMap.addMarker(new MarkerOptions().position(latLng).title(destination));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f));
+                } else {
+                    Toast.makeText(this, "Destination not found: " + destination, Toast.LENGTH_SHORT).show();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }

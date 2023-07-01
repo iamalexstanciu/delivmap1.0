@@ -7,6 +7,10 @@ plugins {
 android {
     namespace 'com.upvisionmedia.delivmap10'
     compileSdk 33
+    lintOptions {
+        warningsAsErrors true
+        enable 'Deprecation'
+    }
 
     defaultConfig {
         applicationId "com.upvisionmedia.delivmap10"
