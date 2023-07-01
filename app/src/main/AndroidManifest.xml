@@ -47,6 +47,10 @@
             android:label="Login">
         </activity>
         <activity
+            android:name=".data.RouteActivity"
+            android:label="RouteActivity">
+        </activity>
+        <activity
             android:name=".service.SignInActivity"
             android:label="Sign In">
         </activity>
