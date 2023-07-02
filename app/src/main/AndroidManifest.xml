@@ -39,15 +39,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".data.HomePageActivity"
+            android:name=".pages.HomePageActivity"
             android:label="Login">
+        </activity>
+        <activity
+            android:name=".pages.SidebarActivity"
+            android:label="Sidebar">
         </activity>
         <activity
             android:name=".service.LoginActivity"
             android:label="Login">
         </activity>
         <activity
-            android:name=".data.RouteActivity"
+            android:name=".pages.RouteActivity"
             android:label="RouteActivity">
         </activity>
         <activity
@@ -59,7 +63,7 @@
             android:label="Registration">
         </activity>
         <activity
-            android:name=".InfoDisplayActivity"
+            android:name=".pages.InfoDisplayActivity"
             android:label="Info">
         </activity>
     </application>

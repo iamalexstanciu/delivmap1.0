@@ -16,7 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.upvisionmedia.delivmap10.data.HomePageActivity;
+import com.upvisionmedia.delivmap10.pages.HomePageActivity;
 import com.upvisionmedia.delivmap10.R;
 
 
