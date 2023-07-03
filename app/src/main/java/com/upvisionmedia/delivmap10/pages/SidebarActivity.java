@@ -1,5 +1,6 @@
 package com.upvisionmedia.delivmap10.pages;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,16 +34,37 @@ public class SidebarActivity extends AppCompatActivity implements View.OnClickLi
         // Handle button clicks
         if (view.getId() == R.id.profile_button) {
             // Handle Profile button click
-            // Add your implementation here
+            openProfileLayout();
         } else if (view.getId() == R.id.historyButton) {
             // Handle History button click
-            // Add your implementation here
+            openHistoryLayout();
         } else if (view.getId() == R.id.settingsButton) {
             // Handle Settings button click
-            // Add your implementation here
+            openSettingsLayout();
         } else if (view.getId() == R.id.contactButton) {
             // Handle Contact button click
-            // Add your implementation here
+            openContactLayout();
         }
+
     }
+    private void openProfileLayout() {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+    private void openHistoryLayout() {
+        Intent intent = new Intent(this, HistoryActivity.class);
+        startActivity(intent);
+    }
+
+    private void openSettingsLayout() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    private void openContactLayout() {
+        Intent intent = new Intent(this, ContactActivity.class);
+        startActivity(intent);
+    }
+
 }

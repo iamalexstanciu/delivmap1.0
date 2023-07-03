@@ -39,6 +39,22 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".pages.ProfileActivity"
+            android:label="Profile" />
+
+        <activity
+            android:name=".pages.HistoryActivity"
+            android:label="History" />
+
+        <activity
+            android:name=".pages.SettingsActivity"
+            android:label="Settings" />
+
+        <activity
+            android:name=".pages.ContactActivity"
+            android:label="Contact" />
+
+        <activity
             android:name=".pages.HomePageActivity"
             android:label="Login">
         </activity>

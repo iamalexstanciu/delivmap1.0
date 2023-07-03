@@ -33,30 +33,21 @@ public class MainActivity extends AppCompatActivity {
 
         welcomeText.setText("Welcome to DelivMap");
 
-        signInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Start the sign-in activity
-                Intent intent = new Intent(MainActivity.this, SignInActivity.class);
-                startActivity(intent);
-            }
+        signInButton.setOnClickListener(v -> {
+            // Start the sign-in activity
+            Intent intent = new Intent(MainActivity.this, SignInActivity.class);
+            startActivity(intent);
         });
 
-        infoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Start the home page activity
-                Intent intent = new Intent(MainActivity.this, HomePageActivity.class);
-                startActivity(intent);
-            }
+        infoButton.setOnClickListener(v -> {
+            // Start the home page activity
+            Intent intent = new Intent(MainActivity.this, HomePageActivity.class);
+            startActivity(intent);
         });
 
-        sidebarButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Open the sidebar
-                openSidebar();
-            }
+        sidebarButton.setOnClickListener(v -> {
+            // Open the sidebar
+            openSidebar();
         });
     }
 
