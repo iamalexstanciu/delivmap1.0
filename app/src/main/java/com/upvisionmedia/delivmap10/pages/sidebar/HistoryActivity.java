@@ -1,4 +1,4 @@
-package com.upvisionmedia.delivmap10.pages;
+package com.upvisionmedia.delivmap10.pages.sidebar;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
