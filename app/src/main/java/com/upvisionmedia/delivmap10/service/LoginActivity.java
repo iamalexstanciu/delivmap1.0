@@ -25,8 +25,6 @@ public class LoginActivity extends Activity {
 
     private EditText emailEditText;
     private EditText passwordEditText;
-    private Button loginButton;
-    private DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +33,7 @@ public class LoginActivity extends Activity {
 
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
-        loginButton = findViewById(R.id.loginButton);
+        Button loginButton = findViewById(R.id.loginButton);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +56,7 @@ public class LoginActivity extends Activity {
     }
 
     private boolean isValidCredentials(String email, String password) {
-        databaseHelper = new DatabaseHelper(this);
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
 
         String selection = COLUMN_EMAIL + " = ? AND " + COLUMN_PASSWORD + " = ?";

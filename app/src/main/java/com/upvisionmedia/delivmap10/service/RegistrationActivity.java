@@ -16,7 +16,6 @@ public class RegistrationActivity extends Activity {
     private EditText nameEditText;
     private EditText passwordEditText;
     private EditText confirmPasswordEditText;
-    private Button registerButton;
     private DatabaseHelper databaseHelper;
 
     @Override
@@ -28,7 +27,7 @@ public class RegistrationActivity extends Activity {
         nameEditText = findViewById(R.id.nameEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         confirmPasswordEditText = findViewById(R.id.confirmPasswordEditText);
-        registerButton = findViewById(R.id.registerButton);
+        Button registerButton = findViewById(R.id.registerButton);
 
         databaseHelper = new DatabaseHelper(this);
 

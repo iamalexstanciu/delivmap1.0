@@ -6,7 +6,6 @@ import androidx.core.view.GravityCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -15,9 +14,6 @@ import com.upvisionmedia.delivmap10.service.SignInActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button signInButton;
-    private Button infoButton;
-    private Button sidebarButton;
     private DrawerLayout drawerLayout;
 
     @Override
@@ -26,12 +22,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextView welcomeText = findViewById(R.id.welcomeText);
-        signInButton = findViewById(R.id.signInButton);
-        infoButton = findViewById(R.id.infoButton);
-        sidebarButton = findViewById(R.id.sidebarButton);
+        Button signInButton = findViewById(R.id.signInButton);
+        Button infoButton = findViewById(R.id.infoButton);
+        Button sidebarButton = findViewById(R.id.sidebarButton);
         drawerLayout = findViewById(R.id.drawerLayout);
 
-        welcomeText.setText("Welcome to DelivMap");
+        welcomeText.setText(R.string.welcome_to_delivmap2);
 
         signInButton.setOnClickListener(v -> {
             // Start the sign-in activity
@@ -49,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             // Open the sidebar
             openSidebar();
         });
+
     }
 
     private void openSidebar() {
@@ -56,4 +53,6 @@ public class MainActivity extends AppCompatActivity {
             drawerLayout.openDrawer(GravityCompat.START);
         }
     }
+
+
 }

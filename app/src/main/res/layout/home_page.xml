@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/map_fragment"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
@@ -18,7 +17,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
-        android:hint="Enter destination" />
+        android:hint="@string/enter_destination"
+        android:autofillHints=""
+        android:inputType="textAutoCorrect" />
 
     <Button
         android:id="@+id/go_button"
@@ -28,8 +29,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:layout_toLeftOf="@id/add_button"
-        android:text="Go" />
+        android:layout_toStartOf="@id/add_button"
+        android:text="@string/go" />
 
     <Button
         android:id="@+id/add_button"
@@ -37,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
-        android:layout_alignParentRight="true"
-        android:text="+" />
+        android:layout_alignParentEnd="true"
+        android:text="@string/plus" />
 
 </RelativeLayout>

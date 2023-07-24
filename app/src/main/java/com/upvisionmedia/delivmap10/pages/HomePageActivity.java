@@ -1,8 +1,8 @@
 package com.upvisionmedia.delivmap10.pages;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.widget.Button;
@@ -21,8 +21,10 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.upvisionmedia.delivmap10.R;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,7 +81,7 @@ public class HomePageActivity extends AppCompatActivity implements OnMapReadyCal
     }
 
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
 
         // Check location permission
@@ -112,8 +114,7 @@ public class HomePageActivity extends AppCompatActivity implements OnMapReadyCal
 
     private void getCurrentLocation() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
+
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
             return;
         }
@@ -127,31 +128,6 @@ public class HomePageActivity extends AppCompatActivity implements OnMapReadyCal
         });
     }
 
-//    private void calculateRoute() {
-//        // Clear existing markers
-//        mMap.clear();
-//
-//        // Add destination markers
-//        Geocoder geocoder = new Geocoder(this);
-//        for (String destination : destinations) {
-//            try {
-//                List<Address> addresses = geocoder.getFromLocationName(destination, 1);
-//                if (addresses != null && addresses.size() > 0) {
-//                    Address address = addresses.get(0);
-//                    double latitude = address.getLatitude();
-//                    double longitude = address.getLongitude();
-//                    LatLng latLng = new LatLng(latitude, longitude);
-//                    mMap.addMarker(new MarkerOptions().position(latLng).title(destination));
-//                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f));
-//                } else {
-//                    Toast.makeText(this, "Destination not found: " + destination, Toast.LENGTH_SHORT).show();
-//                }
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
-
     private void calculateRoute() {
         // Clear existing markers
         mMap.clear();
@@ -159,14 +135,39 @@ public class HomePageActivity extends AppCompatActivity implements OnMapReadyCal
         // Add destination markers
         Geocoder geocoder = new Geocoder(this);
         for (String destination : destinations) {
-            // ...
+            try {
+                List<Address> addresses = geocoder.getFromLocationName(destination, 1);
+                if (addresses != null && addresses.size() > 0) {
+                    Address address = addresses.get(0);
+                    double latitude = address.getLatitude();
+                    double longitude = address.getLongitude();
+                    LatLng latLng = new LatLng(latitude, longitude);
+                    mMap.addMarker(new MarkerOptions().position(latLng).title(destination));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f));
+                } else {
+                    Toast.makeText(this, "Destination not found: " + destination, Toast.LENGTH_SHORT).show();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-
-        // Start RouteActivity with destinations and best route
-        Intent intent = new Intent(this, RouteActivity.class);
-        intent.putStringArrayListExtra("destinations", new ArrayList<>(destinations));
-        // Calculate the best route and pass it as an extra to the intent
-        // ...
-        startActivity(intent);
     }
+
+//    private void calculateRoute() {
+//        // Clear existing markers
+//        mMap.clear();
+//
+//        // Add destination markers
+//        Geocoder geocoder = new Geocoder(this);
+//        for (String destination : destinations) {
+//            // ...
+//        }
+//
+//        // Start RouteActivity with destinations and best route
+//        Intent intent = new Intent(this, RouteActivity.class);
+//        intent.putStringArrayListExtra("destinations", new ArrayList<>(destinations));
+//        // Calculate the best route and pass it as an extra to the intent
+//        // ...
+//        startActivity(intent);
+//    }
 }

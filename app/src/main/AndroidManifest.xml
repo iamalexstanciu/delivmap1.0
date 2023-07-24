@@ -30,6 +30,7 @@
             android:value="AIzaSyBPQauIxFZOv4vN44tOgF3Nu4dh_nCFHP4" />
         <activity
             android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,29 +38,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".pages.sidebar.ProfileActivity"
-            android:label="Profile" />
-
-        <activity
-            android:name=".pages.sidebar.HistoryActivity"
-            android:label="History" />
-
-        <activity
-            android:name=".pages.sidebar.SettingsActivity"
-            android:label="Settings" />
-
-        <activity
-            android:name=".pages.sidebar.ContactActivity"
-            android:label="Contact" />
+        <activity android:name=".pages.sidebar.SidebarActivity" />
+        <activity android:name=".pages.sidebar.ProfileActivity" />
+        <activity android:name=".pages.sidebar.HistoryActivity" />
+        <activity android:name=".pages.sidebar.SettingsActivity" />
+        <activity android:name=".pages.sidebar.ContactActivity" />
 
         <activity
             android:name=".pages.HomePageActivity"
-            android:label="Login">
-        </activity>
-        <activity
-            android:name=".pages.sidebar.SidebarActivity"
-            android:label="Sidebar">
+            android:label="HomePage">
         </activity>
         <activity
             android:name=".service.LoginActivity"

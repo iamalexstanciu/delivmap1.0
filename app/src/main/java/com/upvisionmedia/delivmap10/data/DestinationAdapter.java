@@ -12,7 +12,7 @@ import java.util.List;
 
 public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.ViewHolder> {
 
-    private List<String> destinations;
+    private final List<String> destinations;
 
     public DestinationAdapter(List<String> destinations) {
         this.destinations = destinations;

@@ -10,20 +10,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.upvisionmedia.delivmap10.R;
 
 public class SidebarActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button profile_button, historyButton, settingsButton, contactButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sidebar);
 
-        // Find buttons by their IDs
-        profile_button = findViewById(R.id.profile_button);
-        historyButton = findViewById(R.id.historyButton);
-        settingsButton = findViewById(R.id.settingsButton);
-        contactButton = findViewById(R.id.contactButton);
+        // Buttons on sidebar
+        Button profile_button = findViewById(R.id.profile_button);
+        Button historyButton = findViewById(R.id.historyButton);
+        Button settingsButton = findViewById(R.id.settingsButton);
+        Button contactButton = findViewById(R.id.contactButton);
 
-        // Set click listeners for the buttons
+        // Listeners on buttons
         profile_button.setOnClickListener(this);
         historyButton.setOnClickListener(this);
         settingsButton.setOnClickListener(this);

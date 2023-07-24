@@ -3,6 +3,7 @@ package com.upvisionmedia.delivmap10.pages;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -40,7 +41,7 @@ public class RouteActivity extends AppCompatActivity implements OnMapReadyCallba
     }
 
     @Override
-    public void onMapReady(GoogleMap map) {
+    public void onMapReady(@NonNull GoogleMap map) {
 
         // Add markers for each destination
         ArrayList<String> destinations = getIntent().getStringArrayListExtra("destinations");
