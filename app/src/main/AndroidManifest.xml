@@ -38,11 +38,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".pages.sidebar.SidebarActivity" />
-        <activity android:name=".pages.sidebar.ProfileActivity" />
-        <activity android:name=".pages.sidebar.HistoryActivity" />
-        <activity android:name=".pages.sidebar.SettingsActivity" />
-        <activity android:name=".pages.sidebar.ContactActivity" />
 
         <activity
             android:name=".pages.HomePageActivity"
