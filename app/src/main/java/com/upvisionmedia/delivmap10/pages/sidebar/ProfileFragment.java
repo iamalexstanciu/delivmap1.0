@@ -1,4 +1,4 @@
-package com.upvisionmedia.delivmap10.pages.sidebar_drawer;
+package com.upvisionmedia.delivmap10.pages.sidebar;
 
 import android.os.Bundle;
 

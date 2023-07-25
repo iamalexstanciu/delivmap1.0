@@ -1,4 +1,4 @@
-package com.upvisionmedia.delivmap10.pages;
+package com.upvisionmedia.delivmap10.data;
 
 import android.os.Bundle;
 import android.widget.TextView;

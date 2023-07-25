@@ -1,4 +1,4 @@
-package com.upvisionmedia.delivmap10.pages.sidebar_drawer;
+package com.upvisionmedia.delivmap10.pages.sidebar;
 
 import android.os.Bundle;
 
@@ -10,13 +10,12 @@ import android.view.ViewGroup;
 
 import com.upvisionmedia.delivmap10.R;
 
-
-public class ShareFragment extends Fragment {
+public class HistoryFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_share, container, false);
+        return inflater.inflate(R.layout.fragment_history, container, false);
     }
 }

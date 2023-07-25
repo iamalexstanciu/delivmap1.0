@@ -16,7 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.upvisionmedia.delivmap10.pages.HomePageActivity;
+import com.upvisionmedia.delivmap10.pages.DestinationMain;
 import com.upvisionmedia.delivmap10.R;
 
 
@@ -45,7 +45,7 @@ public class LoginActivity extends Activity {
                 if (isValidCredentials(email, password)) {
                     Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, DestinationMain.class);
                     startActivity(intent);
                     finish();
                 } else {

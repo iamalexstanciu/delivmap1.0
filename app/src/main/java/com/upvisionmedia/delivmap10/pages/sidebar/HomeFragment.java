@@ -1,4 +1,4 @@
-package com.upvisionmedia.delivmap10.pages.sidebar_drawer;
+package com.upvisionmedia.delivmap10.pages.sidebar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.upvisionmedia.delivmap10.R;
 import com.upvisionmedia.delivmap10.service.SignInActivity;
-import com.upvisionmedia.delivmap10.pages.HomePageActivity;
+import com.upvisionmedia.delivmap10.pages.DestinationMain;
 
 public class HomeFragment extends Fragment {
 
@@ -36,7 +36,7 @@ public class HomeFragment extends Fragment {
 
         infoButton.setOnClickListener(v -> {
             // Start the home page activity
-            Intent intent = new Intent(getActivity(), HomePageActivity.class);
+            Intent intent = new Intent(getActivity(), DestinationMain.class);
             startActivity(intent);
         });
 

@@ -28,10 +28,11 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBPQauIxFZOv4vN44tOgF3Nu4dh_nCFHP4" />
+
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,30 +40,22 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".pages.HomePageActivity"
-            android:label="HomePage">
-        </activity>
-        <activity
-            android:name=".service.LoginActivity"
-            android:label="Login">
-        </activity>
-        <activity
-            android:name=".pages.RouteActivity"
-            android:label="RouteActivity">
-        </activity>
-        <activity
-            android:name=".service.SignInActivity"
-            android:label="Sign In">
-        </activity>
-        <activity
-            android:name=".service.RegistrationActivity"
-            android:label="Registration">
-        </activity>
-        <activity
-            android:name=".pages.InfoDisplayActivity"
-            android:label="Info">
-        </activity>
+        <activity android:name=".data.RouteActivity" />
+        <activity android:name=".data.DestinationAdapter" />
+        <activity android:name=".pages.DestinationMain" />
+        <activity android:name=".pages.sidebar.AboutFragment" />
+        <activity android:name=".pages.sidebar.ContactFragment" />
+        <activity android:name=".pages.sidebar.HistoryFragment" />
+        <activity android:name=".pages.sidebar.SettingsFragment" />
+        <activity android:name=".pages.sidebar.LogoutFragment" />
+        <activity android:name=".pages.sidebar.HomeFragment" />
+        <activity android:name=".pages.sidebar.ShareFragment" />
+        <activity android:name=".pages.sidebar.ProfileFragment" />
+        <activity android:name=".service.LoginActivity" />
+        <activity android:name=".service.SignInActivity" />
+        <activity android:name=".service.RegistrationActivity" />
+        <activity android:name=".service.DatabaseHelper" />
+
     </application>
 
 </manifest>

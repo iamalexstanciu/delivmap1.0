@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomePageActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class DestinationMain extends AppCompatActivity implements OnMapReadyCallback {
 
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
 
@@ -40,7 +40,7 @@ public class HomePageActivity extends AppCompatActivity implements OnMapReadyCal
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_page);
+        setContentView(R.layout.destionation_main);
 
         // Initialize views
         destinationInput = findViewById(R.id.destination_input);
@@ -63,7 +63,7 @@ public class HomePageActivity extends AppCompatActivity implements OnMapReadyCal
                 destinationInput.setText("");
                 calculateRoute();
             } else {
-                Toast.makeText(HomePageActivity.this, "Please enter a destination", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DestinationMain.this, "Please enter a destination", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -73,9 +73,9 @@ public class HomePageActivity extends AppCompatActivity implements OnMapReadyCal
             if (!destination.isEmpty()) {
                 destinations.add(destination);
                 destinationInput.setText("");
-                Toast.makeText(HomePageActivity.this, "Destination added", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DestinationMain.this, "Destination added", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(HomePageActivity.this, "Please enter a destination", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DestinationMain.this, "Please enter a destination", Toast.LENGTH_SHORT).show();
             }
         });
     }

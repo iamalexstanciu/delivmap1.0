@@ -12,10 +12,10 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
-import com.upvisionmedia.delivmap10.pages.sidebar_drawer.AboutFragment;
-import com.upvisionmedia.delivmap10.pages.sidebar_drawer.HomeFragment;
-import com.upvisionmedia.delivmap10.pages.sidebar_drawer.SettingsFragment;
-import com.upvisionmedia.delivmap10.pages.sidebar_drawer.ShareFragment;
+import com.upvisionmedia.delivmap10.pages.sidebar.AboutFragment;
+import com.upvisionmedia.delivmap10.pages.sidebar.HomeFragment;
+import com.upvisionmedia.delivmap10.pages.sidebar.SettingsFragment;
+import com.upvisionmedia.delivmap10.pages.sidebar.ShareFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
