@@ -1,15 +1,28 @@
 package com.upvisionmedia.delivmap10.service.user;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.developer.gbuttons.GoogleSignInButton;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.upvisionmedia.delivmap10.R;
 import com.upvisionmedia.delivmap10.pages.sidebar.HomeFragment;
@@ -20,6 +33,9 @@ public class SignInActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private EditText signInEmail, signInPassword;
 
+    GoogleSignInButton googleButton;
+    GoogleSignInOptions googleOptions;
+    GoogleSignInClient googleClient;
     private TextView signUpRedirect;
 
     @Override
@@ -32,6 +48,7 @@ public class SignInActivity extends AppCompatActivity {
         signInPassword = findViewById(R.id.sign_in_password);
         Button loginButton = findViewById(R.id.sign_in_button);
         signUpRedirect = findViewById(R.id.registerRedirect);
+        googleButton = findViewById(R.id.google_signin);
 
         loginButton.setOnClickListener(view -> {
             String email = signInEmail.getText().toString();
@@ -53,5 +70,39 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
         signUpRedirect.setOnClickListener(view -> startActivity(new Intent(SignInActivity.this, SignUpActivity.class)));
+
+        googleOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+        googleClient = GoogleSignIn.getClient(this, googleOptions);
+
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+
+        if(account != null){
+            finish();
+            Intent intent = new Intent(SignInActivity.this, DestinationMain.class);
+            startActivity(intent);
+        }
+        ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if (result.getResultCode() == Activity.RESULT_OK){
+                    Intent data = result.getData();
+                    Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+                    try {
+                        task.getResult(ApiException.class);
+                        finish();
+                        Intent intent = new Intent(SignInActivity.this, DestinationMain.class);
+                    } catch (ApiException e) {
+                        Toast.makeText(SignInActivity.this, "Somenthing went wrong!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+        googleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent signInIntent = googleClient.getSignInIntent();
+                activityResultLauncher.launch(signInIntent);
+            }
+        });
     }
 }
