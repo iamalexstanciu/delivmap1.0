@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/backLogin"
+    android:background="@drawable/background1"
     tools:context=".service.user.SignUpActivity"
 
     >
