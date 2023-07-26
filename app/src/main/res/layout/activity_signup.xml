@@ -50,17 +50,18 @@
                 android:autofillHints="Email" />
 
             <EditText
+                android:id="@+id/sign_up_password"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/sign_up_password"
-                android:backgroundTint="@color/black"
                 android:layout_marginTop="20dp"
-                android:padding="8dp"
-                android:hint="@string/password"
+                android:autofillHints="Password"
+                android:backgroundTint="@color/black"
                 android:drawableStart="@drawable/ic_baseline_lock_24"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"
-                android:autofillHints="Password" />
+                android:inputType="textPassword"
+                android:hint="@string/password"
+                android:padding="8dp"
+                android:textColor="@color/black" />
 
             <Button
                 android:layout_width="match_parent"

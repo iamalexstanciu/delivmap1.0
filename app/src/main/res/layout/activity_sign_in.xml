@@ -55,6 +55,7 @@
                 android:backgroundTint="@color/black"
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
+                android:inputType="textPassword"
                 android:hint="@string/password"
                 android:drawableStart="@drawable/ic_baseline_lock_24"
                 android:drawablePadding="8dp"
