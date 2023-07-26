@@ -3,29 +3,24 @@ package com.upvisionmedia.delivmap10.service.user;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.upvisionmedia.delivmap10.MainActivity;
 import com.upvisionmedia.delivmap10.R;
 import com.upvisionmedia.delivmap10.pages.sidebar.HomeFragment;
+import com.upvisionmedia.delivmap10.service.DestinationMain;
 
 public class SignInActivity extends AppCompatActivity {
 
     private FirebaseAuth auth;
     private EditText signInEmail, signInPassword;
+
     private TextView signUpRedirect;
-    private Button loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +30,7 @@ public class SignInActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         signInEmail = findViewById(R.id.sign_in_email);
         signInPassword = findViewById(R.id.sign_in_password);
-        loginButton = findViewById(R.id.sign_in_button);
+        Button loginButton = findViewById(R.id.sign_in_button);
         signUpRedirect = findViewById(R.id.registerRedirect);
 
         loginButton.setOnClickListener(view -> {
@@ -47,7 +42,7 @@ public class SignInActivity extends AppCompatActivity {
                     auth.signInWithEmailAndPassword(email, password)
                             .addOnSuccessListener(authResult -> {
                                 Toast.makeText(SignInActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(SignInActivity.this, HomeFragment.class));
+                                startActivity(new Intent(SignInActivity.this, DestinationMain.class));
                                 finish();
                             }).addOnFailureListener(e -> Toast.makeText(SignInActivity.this, "Login Failed!", Toast.LENGTH_SHORT).show());
                 } else {

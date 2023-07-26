@@ -33,4 +33,7 @@
     <string name="share">Share</string>
     <string name="delivmap">DelivMap</string>
     <string name="mail">a.stanciu@upvisionmedia.com</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="not_a_registered_user_yet_sign_up">Not a registered user yet? Sign up</string>
+    <string name="already_registered_sign_in">Already registered? Sign in</string>
 </resources>

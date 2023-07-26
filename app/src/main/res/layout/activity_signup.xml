@@ -43,10 +43,11 @@
                 android:backgroundTint="@color/black"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
-                android:hint="Email"
-                android:drawableLeft="@drawable/ic_baseline_person_24"
+                android:hint="@string/email"
+                android:drawableStart="@drawable/ic_baseline_person_24"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:autofillHints="Email" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -55,17 +56,18 @@
                 android:backgroundTint="@color/black"
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
-                android:hint="Password"
-                android:drawableLeft="@drawable/ic_baseline_lock_24"
+                android:hint="@string/password"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:autofillHints="Password" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Sign Up"
+                android:text="@string/sign_up"
                 android:id="@+id/signup_button"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/cardview_dark_background"/>
 
@@ -73,12 +75,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/loginRedirect"
-                android:text="Already registered? Sign in"
+                android:text="@string/already_registered_sign_in"
                 android:layout_gravity="center"
                 android:padding="8dp"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"
-                android:textSize="15dp"/>
+                android:textSize="15sp"/>
 
 
         </LinearLayout>

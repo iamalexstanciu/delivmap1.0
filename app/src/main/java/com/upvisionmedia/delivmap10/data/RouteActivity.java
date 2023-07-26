@@ -30,6 +30,7 @@ public class RouteActivity extends AppCompatActivity implements OnMapReadyCallba
         // Display the destinations in the layout
         TextView destinationsTextView = findViewById(R.id.destinations_textview);
         StringBuilder destinationsBuilder = new StringBuilder();
+        assert destinations != null;
         for (String destination : destinations) {
             destinationsBuilder.append(destination).append("\n");
         }
@@ -45,6 +46,7 @@ public class RouteActivity extends AppCompatActivity implements OnMapReadyCallba
 
         // Add markers for each destination
         ArrayList<String> destinations = getIntent().getStringArrayListExtra("destinations");
+        assert destinations != null;
         for (String destination : destinations) {
             // Parse the destination coordinates (assuming format: "latitude,longitude")
             String[] coordinates = destination.split(",");

@@ -51,10 +51,8 @@
         <activity android:name=".pages.sidebar.HomeFragment" />
         <activity android:name=".pages.sidebar.ShareFragment" />
         <activity android:name=".pages.sidebar.ProfileFragment" />
-        <activity android:name=".service.user.LoginActivity" />
         <activity android:name=".service.user.SignInActivity" />
         <activity android:name=".service.user.SignUpActivity" />
-        <activity android:name=".service.user.DatabaseHelper" />
 
     </application>
 

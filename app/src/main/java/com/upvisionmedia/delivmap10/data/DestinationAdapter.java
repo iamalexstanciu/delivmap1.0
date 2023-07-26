@@ -37,7 +37,7 @@ public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView destinationTextView;
+        public final TextView destinationTextView;
 
         public ViewHolder(View itemView) {
             super(itemView);
