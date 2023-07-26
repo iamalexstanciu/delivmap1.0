@@ -12,8 +12,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.upvisionmedia.delivmap10.R;
-import com.upvisionmedia.delivmap10.service.SignInActivity;
-import com.upvisionmedia.delivmap10.pages.DestinationMain;
+import com.upvisionmedia.delivmap10.service.user.SignInActivity;
+import com.upvisionmedia.delivmap10.service.DestinationMain;
 
 public class HomeFragment extends Fragment {
 

@@ -42,7 +42,7 @@
 
         <activity android:name=".data.RouteActivity" />
         <activity android:name=".data.DestinationAdapter" />
-        <activity android:name=".pages.DestinationMain" />
+        <activity android:name=".service.DestinationMain" />
         <activity android:name=".pages.sidebar.AboutFragment" />
         <activity android:name=".pages.sidebar.ContactFragment" />
         <activity android:name=".pages.sidebar.HistoryFragment" />
@@ -51,10 +51,10 @@
         <activity android:name=".pages.sidebar.HomeFragment" />
         <activity android:name=".pages.sidebar.ShareFragment" />
         <activity android:name=".pages.sidebar.ProfileFragment" />
-        <activity android:name=".service.LoginActivity" />
-        <activity android:name=".service.SignInActivity" />
-        <activity android:name=".service.RegistrationActivity" />
-        <activity android:name=".service.DatabaseHelper" />
+        <activity android:name=".service.user.LoginActivity" />
+        <activity android:name=".service.user.SignInActivity" />
+        <activity android:name=".service.user.SignUpActivity" />
+        <activity android:name=".service.user.DatabaseHelper" />
 
     </application>
 

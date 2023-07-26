@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "670511851761",
+    "project_id": "delivmap",
+    "storage_bucket": "delivmap.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670511851761:android:997f32fd7f138898772150",
+        "android_client_info": {
+          "package_name": "com.upvisionmedia.delivmap10"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670511851761-qn5d1mhi97o5smrcibs4obju0qc2kht9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgWj1dsvZkQP6JmzCpjfKWod_1Cj7Z3S8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670511851761-qn5d1mhi97o5smrcibs4obju0qc2kht9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

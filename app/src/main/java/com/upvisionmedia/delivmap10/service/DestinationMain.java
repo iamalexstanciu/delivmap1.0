@@ -1,4 +1,4 @@
-package com.upvisionmedia.delivmap10.pages;
+package com.upvisionmedia.delivmap10.service;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
