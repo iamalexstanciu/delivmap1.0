@@ -27,9 +27,10 @@
                 android:layout_height="50dp"
                 android:id="@+id/toolbar"
                 android:elevation="4dp"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:titleTextColor="@color/black"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark"
                 android:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
-                android:background="@color/black"
+                android:background="@drawable/toolbar"
                 />
 
             <FrameLayout
