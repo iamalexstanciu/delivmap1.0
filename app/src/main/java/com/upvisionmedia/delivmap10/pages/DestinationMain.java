@@ -153,21 +153,4 @@ public class DestinationMain extends AppCompatActivity implements OnMapReadyCall
         }
     }
 
-//    private void calculateRoute() {
-//        // Clear existing markers
-//        mMap.clear();
-//
-//        // Add destination markers
-//        Geocoder geocoder = new Geocoder(this);
-//        for (String destination : destinations) {
-//            // ...
-//        }
-//
-//        // Start RouteActivity with destinations and best route
-//        Intent intent = new Intent(this, RouteActivity.class);
-//        intent.putStringArrayListExtra("destinations", new ArrayList<>(destinations));
-//        // Calculate the best route and pass it as an extra to the intent
-//        // ...
-//        startActivity(intent);
-//    }
 }
