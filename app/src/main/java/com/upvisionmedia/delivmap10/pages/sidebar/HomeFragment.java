@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.upvisionmedia.delivmap10.R;
 import com.upvisionmedia.delivmap10.service.user.SignInActivity;
-import com.upvisionmedia.delivmap10.service.DestinationMain;
+import com.upvisionmedia.delivmap10.service.MainMenu;
 
 public class HomeFragment extends Fragment {
 
@@ -36,7 +36,7 @@ public class HomeFragment extends Fragment {
 
         infoButton.setOnClickListener(v -> {
             // Start the home page activity
-            Intent intent = new Intent(getActivity(), DestinationMain.class);
+            Intent intent = new Intent(getActivity(), MainMenu.class);
             startActivity(intent);
         });
 

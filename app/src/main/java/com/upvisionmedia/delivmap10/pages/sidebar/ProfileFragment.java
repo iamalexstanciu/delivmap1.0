@@ -21,7 +21,7 @@ import com.google.android.gms.tasks.Task;
 import com.upvisionmedia.delivmap10.R;
 import com.upvisionmedia.delivmap10.service.user.SignInActivity;
 
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends Fragment  {
 
     private TextView username;
     private Button logout;
@@ -38,26 +38,23 @@ public class ProfileFragment extends Fragment {
         username = view.findViewById(R.id.username);
         logout = view.findViewById(R.id.logoutButton);
         googleOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-        googleClient = GoogleSignIn.getClient(this, googleOptions);
+        googleClient = GoogleSignIn.getClient(requireContext(), googleOptions);
 
-        GoogleSignInAccount googleAccount = GoogleSignIn.getLastSignedInAccount(this);
+        GoogleSignInAccount googleAccount = GoogleSignIn.getLastSignedInAccount(requireContext());
 
         if(googleAccount != null) {
         String googleName = googleAccount.getDisplayName();
         username.setText(googleName);
         }
-        logout.setOnClickListener(new View.OnClickListener() {
+        logout.setOnClickListener(view1 -> googleClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
-            public void onClick(View view) {
-                googleClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        finish();
-                        startActivity(new Intent(ProfileFragment.this, SignInActivity.class));
-                    }
-                });
+            public void onComplete(@NonNull Task<Void> task) {
+                if (getActivity() != null) {
+                    getActivity().finish(); // Finish the hosting activity, if it exists.
+                    startActivity(new Intent(getActivity(), SignInActivity.class)); // Start the new activity.
+                }
             }
-        });
+        }));
 
         // Now you can use 'username' and 'logout' as references to the views.
 

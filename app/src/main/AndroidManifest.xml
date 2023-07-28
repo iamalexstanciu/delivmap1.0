@@ -42,7 +42,7 @@
 
         <activity android:name=".data.RouteActivity" />
         <activity android:name=".data.DestinationAdapter" />
-        <activity android:name=".service.DestinationMain" />
+        <activity android:name=".service.MainMenu" />
         <activity android:name=".pages.sidebar.AboutFragment" />
         <activity android:name=".pages.sidebar.ContactFragment" />
         <activity android:name=".pages.sidebar.HistoryFragment" />

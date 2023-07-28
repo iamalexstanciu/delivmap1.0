@@ -25,8 +25,7 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.upvisionmedia.delivmap10.R;
-import com.upvisionmedia.delivmap10.pages.sidebar.HomeFragment;
-import com.upvisionmedia.delivmap10.service.DestinationMain;
+import com.upvisionmedia.delivmap10.service.MainMenu;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -59,7 +58,7 @@ public class SignInActivity extends AppCompatActivity {
                     auth.signInWithEmailAndPassword(email, password)
                             .addOnSuccessListener(authResult -> {
                                 Toast.makeText(SignInActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(SignInActivity.this, DestinationMain.class));
+                                startActivity(new Intent(SignInActivity.this, MainMenu.class));
                                 finish();
                             }).addOnFailureListener(e -> Toast.makeText(SignInActivity.this, "Login Failed!", Toast.LENGTH_SHORT).show());
                 } else {
@@ -78,7 +77,7 @@ public class SignInActivity extends AppCompatActivity {
 
         if(account != null){
             finish();
-            Intent intent = new Intent(SignInActivity.this, DestinationMain.class);
+            Intent intent = new Intent(SignInActivity.this, MainMenu.class);
             startActivity(intent);
         }
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
@@ -90,7 +89,7 @@ public class SignInActivity extends AppCompatActivity {
                     try {
                         task.getResult(ApiException.class);
                         finish();
-                        Intent intent = new Intent(SignInActivity.this, DestinationMain.class);
+                        Intent intent = new Intent(SignInActivity.this, MainMenu.class);
                     } catch (ApiException e) {
                         Toast.makeText(SignInActivity.this, "Somenthing went wrong!", Toast.LENGTH_SHORT).show();
                     }

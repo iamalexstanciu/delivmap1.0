@@ -69,7 +69,7 @@
                 android:text="@string/sign_in"
                 android:textSize="18sp" />
 
-            <com.google.android.gms.common.SignInButton
+            <com.developer.gbuttons.GoogleSignInButton
                 android:id="@+id/google_signin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

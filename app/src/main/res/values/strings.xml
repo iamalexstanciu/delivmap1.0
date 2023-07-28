@@ -36,4 +36,9 @@
     <string name="sign_up">Sign Up</string>
     <string name="not_a_registered_user_yet_sign_up">Not a registered user yet? Sign up</string>
     <string name="already_registered_sign_in">Already registered? Sign in</string>
+    <string name="traffic">Traffic</string>
+    <string name="search_delivery">Search delivery</string>
+    <string name="hello">Hello</string>
+    <string name="deliveries">Deliveries</string>
+    <string name="news">News</string>
 </resources>
