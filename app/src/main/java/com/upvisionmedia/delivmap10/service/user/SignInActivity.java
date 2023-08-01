@@ -4,14 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
-import android.view.View;
+
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,7 +33,6 @@ public class SignInActivity extends AppCompatActivity {
     GoogleSignInButton googleButton;
     GoogleSignInOptions googleOptions;
     GoogleSignInClient googleClient;
-    private TextView signUpRedirect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +43,7 @@ public class SignInActivity extends AppCompatActivity {
         signInEmail = findViewById(R.id.sign_in_email);
         signInPassword = findViewById(R.id.sign_in_password);
         Button loginButton = findViewById(R.id.sign_in_button);
-        signUpRedirect = findViewById(R.id.registerRedirect);
+        TextView signUpRedirect = findViewById(R.id.registerRedirect);
         googleButton = findViewById(R.id.google_signin);
 
         loginButton.setOnClickListener(view -> {
@@ -80,28 +77,21 @@ public class SignInActivity extends AppCompatActivity {
             Intent intent = new Intent(SignInActivity.this, MainMenu.class);
             startActivity(intent);
         }
-        ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
-            @Override
-            public void onActivityResult(ActivityResult result) {
-                if (result.getResultCode() == Activity.RESULT_OK){
-                    Intent data = result.getData();
-                    Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-                    try {
-                        task.getResult(ApiException.class);
-                        finish();
-                        Intent intent = new Intent(SignInActivity.this, MainMenu.class);
-                    } catch (ApiException e) {
-                        Toast.makeText(SignInActivity.this, "Somenthing went wrong!", Toast.LENGTH_SHORT).show();
-                    }
+        ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+            if (result.getResultCode() == Activity.RESULT_OK){
+                Intent data = result.getData();
+                Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+                try {
+                    task.getResult(ApiException.class);
+                    finish();
+                } catch (ApiException e) {
+                    Toast.makeText(SignInActivity.this, "Somenthing went wrong!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-        googleButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent signInIntent = googleClient.getSignInIntent();
-                activityResultLauncher.launch(signInIntent);
-            }
+        googleButton.setOnClickListener(view -> {
+            Intent signInIntent = googleClient.getSignInIntent();
+            activityResultLauncher.launch(signInIntent);
         });
     }
 }

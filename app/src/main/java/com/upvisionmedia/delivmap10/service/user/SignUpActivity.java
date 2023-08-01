@@ -15,7 +15,6 @@ public class SignUpActivity extends Activity {
 
     private FirebaseAuth auth;
     private EditText signUpEmail, signUpPassword;
-    private TextView loginRedirect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +25,7 @@ public class SignUpActivity extends Activity {
         signUpEmail = findViewById(R.id.sign_up_email);
         signUpPassword = findViewById(R.id.sign_up_password);
         Button signUp = findViewById(R.id.signup_button);
-        loginRedirect = findViewById(R.id.loginRedirect);
+        TextView loginRedirect = findViewById(R.id.loginRedirect);
 
     signUp.setOnClickListener(v -> {
         String user = signUpEmail.getText().toString().trim();

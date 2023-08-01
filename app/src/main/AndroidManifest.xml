@@ -40,7 +40,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".data.RouteActivity" />
         <activity android:name=".data.DestinationAdapter" />
         <activity android:name=".service.MainMenu" />
         <activity android:name=".pages.sidebar.AboutFragment" />

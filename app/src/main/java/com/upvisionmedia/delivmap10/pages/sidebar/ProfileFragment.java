@@ -23,8 +23,6 @@ import com.upvisionmedia.delivmap10.service.user.SignInActivity;
 
 public class ProfileFragment extends Fragment  {
 
-    private TextView username;
-    private Button logout;
     GoogleSignInClient googleClient;
     GoogleSignInOptions googleOptions;
 
@@ -35,8 +33,8 @@ public class ProfileFragment extends Fragment  {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         // Now you can access views by their ID using 'view'
-        username = view.findViewById(R.id.username);
-        logout = view.findViewById(R.id.logoutButton);
+        TextView username = view.findViewById(R.id.username);
+        Button logout = view.findViewById(R.id.logoutButton);
         googleOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         googleClient = GoogleSignIn.getClient(requireContext(), googleOptions);
 
@@ -46,13 +44,10 @@ public class ProfileFragment extends Fragment  {
         String googleName = googleAccount.getDisplayName();
         username.setText(googleName);
         }
-        logout.setOnClickListener(view1 -> googleClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (getActivity() != null) {
-                    getActivity().finish(); // Finish the hosting activity, if it exists.
-                    startActivity(new Intent(getActivity(), SignInActivity.class)); // Start the new activity.
-                }
+        logout.setOnClickListener(view1 -> googleClient.signOut().addOnCompleteListener(task -> {
+            if (getActivity() != null) {
+                getActivity().finish(); // Finish the hosting activity, if it exists.
+                startActivity(new Intent(getActivity(), SignInActivity.class)); // Start the new activity.
             }
         }));
 
