@@ -74,12 +74,13 @@
                 android:paddingEnd="15dp"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                />
+                android:autofillHints="" />
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/baseline_search_24"
-                app:tint="@color/yellow"/>
+                app:tint="@color/yellow"
+                android:contentDescription="TODO" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -205,7 +206,6 @@
 
 
             </LinearLayout>
-
             <LinearLayout
                 android:id="@+id/layoutSettings"
                 android:layout_width="0dp"
@@ -216,9 +216,8 @@
                 android:orientation="vertical"
                 android:padding="15dp"
                 app:layout_constraintDimensionRatio="H, 1:1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/layoutDeliveries"
-                app:layout_constraintTop_toBottomOf="@id/layoutProfile">
+                app:layout_constraintEnd_toEndOf="@id/layoutTraffic"
+                app:layout_constraintTop_toBottomOf="@id/layoutTraffic">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -241,36 +240,74 @@
 
             </LinearLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
+                android:id="@+id/layoutStatictics"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="22dp"
-                android:background="@color/grey"
-                android:padding="20dp"
-                app:layout_constraintEnd_toEndOf="@id/layoutSettings"
-                app:layout_constraintStart_toStartOf="@id/layoutDeliveries"
-                app:layout_constraintTop_toBottomOf="@id/layoutTraffic"
-               >
-
-            <TextView
-                android:layout_width="60dp"
-                android:layout_height="30dp"
-                android:id="@+id/textNews"
-                android:background="@color/yellow"
-                android:paddingStart="8dp"
-                android:paddingTop="2dp"
-                android:paddingEnd="8dp"
-                android:paddingBottom="2dp"
-                android:text="@string/news"
-                android:textColor="@color/black"
-                android:textSize="16sp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="15dp"
+                app:layout_constraintDimensionRatio="H, 1:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/layoutDeliveries"
+                app:layout_constraintTop_toBottomOf="@id/layoutProfile">
 
-                />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="8dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/statistics"
+                    android:padding="8dp"
+                    android:src="@drawable/statistics" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/statistics"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutMessages"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="22dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="15dp"
+                app:layout_constraintDimensionRatio="H, 1:1"
+                app:layout_constraintEnd_toEndOf="@id/layoutStatictics"
+                app:layout_constraintTop_toBottomOf="@id/layoutStatictics">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="8dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/messages"
+                    android:padding="8dp"
+                    android:src="@drawable/message" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/messages"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

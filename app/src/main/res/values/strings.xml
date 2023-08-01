@@ -41,4 +41,6 @@
     <string name="hello">Hello</string>
     <string name="deliveries">Deliveries</string>
     <string name="news">News</string>
+    <string name="messages">Messages</string>
+    <string name="statistics">Statistics</string>
 </resources>
