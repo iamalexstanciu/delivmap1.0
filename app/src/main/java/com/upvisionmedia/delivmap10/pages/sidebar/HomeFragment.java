@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.upvisionmedia.delivmap10.R;
 import com.upvisionmedia.delivmap10.service.user.SignInActivity;
@@ -29,18 +28,11 @@ public class HomeFragment extends Fragment {
 
             // Your existing code
             Button signInButton = view.findViewById(R.id.signInButton);
-            Button infoButton = view.findViewById(R.id.infoButton);
 
 
             signInButton.setOnClickListener(v -> {
                 // Start the sign-in activity
                 Intent intent = new Intent(getActivity(), SignInActivity.class);
-                startActivity(intent);
-            });
-
-            infoButton.setOnClickListener(v -> {
-                // Start the home page activity
-                Intent intent = new Intent(getActivity(), MainMenu.class);
                 startActivity(intent);
             });
 

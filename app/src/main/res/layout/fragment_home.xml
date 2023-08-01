@@ -38,6 +38,7 @@
             android:id="@+id/welcomeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
             android:layout_below="@id/logo"
             android:layout_centerHorizontal="true"
             android:text="@string/motto_home"
@@ -53,21 +54,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/welcomeText"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="150dp"
             android:background="@drawable/button_background"
             android:layout_marginEnd="94dp"
             android:text="@string/start_now" />
 
-        <Button
-            android:id="@+id/infoButton"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/signInButton"
-            android:layout_alignParentStart="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="80dp"
-            android:text="@string/home_main" />
 
     </RelativeLayout>
 
