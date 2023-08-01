@@ -12,20 +12,4 @@ public class User {
         this.lastName = lastName;
         this.email = email;
     }
-
-    public int getProfileImage() {
-        return profileImage;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
 }

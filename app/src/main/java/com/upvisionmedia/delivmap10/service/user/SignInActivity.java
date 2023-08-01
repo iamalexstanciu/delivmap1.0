@@ -85,7 +85,7 @@ public class SignInActivity extends AppCompatActivity {
                     task.getResult(ApiException.class);
                     finish();
                 } catch (ApiException e) {
-                    Toast.makeText(SignInActivity.this, "Somenthing went wrong!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignInActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

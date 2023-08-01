@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sidebar);
 
-        drawerLayout = findViewById(R.id.drawer_layout); // Corrected this line to use the class variable, not local
-        navigationView = findViewById(R.id.nav_view); // Corrected this line to use the correct ID
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
 
         navigationView.setNavigationItemSelectedListener(this);
 

@@ -15,41 +15,37 @@ import android.widget.ImageView;
 
 import com.upvisionmedia.delivmap10.R;
 import com.upvisionmedia.delivmap10.service.user.SignInActivity;
-import com.upvisionmedia.delivmap10.service.MainMenu;
 
 public class HomeFragment extends Fragment {
 
-        private DrawerLayout drawerLayout;
+    private DrawerLayout drawerLayout;
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View view = inflater.inflate(R.layout.fragment_home, container, false);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-            // Your existing code
-            Button signInButton = view.findViewById(R.id.signInButton);
+        Button signInButton = view.findViewById(R.id.signInButton);
 
 
-            signInButton.setOnClickListener(v -> {
-                // Start the sign-in activity
-                Intent intent = new Intent(getActivity(), SignInActivity.class);
-                startActivity(intent);
-            });
+        signInButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), SignInActivity.class);
+            startActivity(intent);
+        });
 
-            ImageView menu = view.findViewById(R.id.menu_icon);
-            menu.setOnClickListener(v -> openSidebar());
+        ImageView menu = view.findViewById(R.id.menu_icon);
+        menu.setOnClickListener(v -> openSidebar());
 
-            return view;
-        }
+        return view;
+    }
 
-        public void openSidebar() {
-            if (drawerLayout != null) {
-                drawerLayout.openDrawer(GravityCompat.START);
-            }
-        }
-
-        // Add this method to set the DrawerLayout from MainActivity
-        public void setDrawerLayout(DrawerLayout drawerLayout) {
-            this.drawerLayout = drawerLayout;
+    public void openSidebar() {
+        if (drawerLayout != null) {
+            drawerLayout.openDrawer(GravityCompat.START);
         }
     }
+
+    public void setDrawerLayout(DrawerLayout drawerLayout) {
+        this.drawerLayout = drawerLayout;
+    }
+}

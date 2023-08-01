@@ -47,7 +47,8 @@
                 android:drawableStart="@drawable/ic_baseline_person_24"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"
-                android:autofillHints="Email" />
+                android:autofillHints="Email"
+                android:inputType="textEmailAddress" />
 
             <EditText
                 android:id="@+id/sign_up_password"
