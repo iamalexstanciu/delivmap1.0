@@ -43,4 +43,7 @@
     <string name="news">News</string>
     <string name="messages">Messages</string>
     <string name="statistics">Statistics</string>
+    <string name="menu">|||</string>
+    <string name="menu_icon">menu icon</string>
+    <string name="home_main">Home Main</string>
 </resources>

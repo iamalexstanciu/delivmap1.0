@@ -6,14 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pages.sidebar.HomeFragment"
-    android:background="@drawable/backhome"
+    android:background="@drawable/back4"
     >
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="@drawable/back1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/back4"
+
         android:padding="16dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:id="@+id/menu_icon"
+            android:layout_height="50dp"
+            android:background="@drawable/menu"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:contentDescription="@string/menu_icon" />
 
         <ImageView
             android:id="@+id/logo"
@@ -38,10 +49,13 @@
 
         <Button
             android:id="@+id/signInButton"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
+
             android:layout_height="wrap_content"
             android:layout_below="@id/welcomeText"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="100dp"
+            android:layout_marginEnd="94dp"
             android:text="@string/sign_in" />
 
         <Button
@@ -49,9 +63,10 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/signInButton"
-            android:layout_marginTop="90dp"
-            android:layout_marginEnd="229dp"
-            android:text="@string/maps" />
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="80dp"
+            android:text="@string/home_main" />
 
     </RelativeLayout>
 

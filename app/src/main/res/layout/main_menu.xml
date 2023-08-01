@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".service.MainMenu"
-    android:background="@drawable/back1"
+    android:background="@drawable/back4"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -37,7 +37,7 @@
             android:layout_marginTop="15dp"
             android:text="@string/username"
             android:textSize="18sp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@id/textHello"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -69,7 +69,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:autofillHints=""
-                android:background="@color/yellow"
+                android:background="@null"
                 android:hint="@string/search_delivery"
                 android:imeOptions="actionSearch"
                 android:inputType="text"
