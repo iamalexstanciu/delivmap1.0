@@ -9,6 +9,7 @@
     android:background="@drawable/back4"
     >
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -213,6 +214,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="22dp"
+                android:id="@+id/layoutSettings"
                 android:orientation="vertical"
                 android:padding="15dp"
                 app:layout_constraintDimensionRatio="H, 1:1"
@@ -239,6 +241,16 @@
 
 
             </LinearLayout>
+            <FrameLayout
+                android:id="@+id/fragment_container_main_menu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+                android:background="@android:color/white"
+                tools:ignore="NotSibling" />
 
             <LinearLayout
                 android:id="@+id/layoutStatistics"
@@ -279,11 +291,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="22dp"
+                android:id="@+id/layoutMessages"
                 android:orientation="vertical"
                 android:padding="15dp"
                 app:layout_constraintDimensionRatio="H, 1:1"
                 app:layout_constraintEnd_toEndOf="@id/layoutStatistics"
-                app:layout_constraintTop_toBottomOf="@id/layoutStatistics">
+                app:layout_constraintTop_toBottomOf="@id/layoutStatistics"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:layout_width="100dp"

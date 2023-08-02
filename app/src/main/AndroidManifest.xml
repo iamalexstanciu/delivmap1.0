@@ -51,6 +51,10 @@
         <activity android:name=".pages.sidebar.ProfileFragment" />
         <activity android:name=".service.user.SignInActivity" />
         <activity android:name=".service.user.SignUpActivity" />
+        <activity android:name=".homepage.DelivFragment" />
+        <activity android:name=".homepage.MessagesFragment" />
+        <activity android:name=".homepage.TrafficFragment" />
+
 
     </application>
 
