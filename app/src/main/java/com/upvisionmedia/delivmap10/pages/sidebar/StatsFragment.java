@@ -1,16 +1,15 @@
 package com.upvisionmedia.delivmap10.pages.sidebar;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
+
 import com.upvisionmedia.delivmap10.R;
 
-public class HistoryFragment extends Fragment {
+public class StatsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

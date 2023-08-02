@@ -13,20 +13,25 @@
             android:title="@string/home"/>
         <item
             android:icon="@drawable/nav_profile"
+            android:id="@+id/nav_profile"
             android:title="@string/profile"/>
         <item
-            android:icon="@drawable/nav_history"
-            android:title="@string/history"/>
+            android:icon="@drawable/nav_stats"
+            android:id="@+id/nav_stats"
+            android:title="@string/statistics"/>
         <item
             android:icon="@drawable/nav_contact"
+            android:id="@+id/nav_contact"
             android:title="@string/contact"/>
 
         <item
             android:icon="@drawable/nav_settings"
+            android:id="@+id/nav_settings"
             android:title="@string/settings"/>
 
         <item
             android:icon="@drawable/nav_share"
+            android:id="@+id/nav_share"
             android:title="@string/share"/>
 
         <item

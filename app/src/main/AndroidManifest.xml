@@ -44,7 +44,7 @@
         <activity android:name=".service.MainMenu" />
         <activity android:name=".pages.sidebar.AboutFragment" />
         <activity android:name=".pages.sidebar.ContactFragment" />
-        <activity android:name=".pages.sidebar.HistoryFragment" />
+        <activity android:name=".pages.sidebar.StatsFragment" />
         <activity android:name=".pages.sidebar.SettingsFragment" />
         <activity android:name=".pages.sidebar.HomeFragment" />
         <activity android:name=".pages.sidebar.ShareFragment" />
