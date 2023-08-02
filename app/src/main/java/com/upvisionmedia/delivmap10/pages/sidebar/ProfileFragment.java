@@ -1,16 +1,23 @@
 package com.upvisionmedia.delivmap10.pages.sidebar;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -25,6 +32,16 @@ public class ProfileFragment extends Fragment {
     GoogleSignInOptions googleOptions;
     FirebaseAuth firebaseAuth;
 
+    private ImageView profileImage;
+    private EditText editTextFirstname, editTextLastName;
+
+    private Button gallerySelect;
+
+    private Uri selectedImageUri;
+    private ActivityResultLauncher<String> galleryLauncher;
+    private static final int GALLERY_REQUEST_CODE = 1001;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -32,8 +49,13 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         // Now you can access views by their ID using 'view'
-        TextView username = view.findViewById(R.id.username);
+        TextView username = view.findViewById(R.id.usernameProfile);
         Button logout = view.findViewById(R.id.logoutButton);
+        profileImage = view.findViewById(R.id.profileImage);
+        editTextFirstname = view.findViewById(R.id.editTextFirstname);
+        editTextLastName = view.findViewById(R.id.editTextLastName);
+        gallerySelect = view.findViewById(R.id.galleryButton);
+
 
         googleOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         googleClient = GoogleSignIn.getClient(requireContext(), googleOptions);
@@ -41,9 +63,50 @@ public class ProfileFragment extends Fragment {
 
         GoogleSignInAccount googleAccount = GoogleSignIn.getLastSignedInAccount(requireContext());
 
+        // Display user email if logged w/Google
+
+        if (googleAccount != null) {
+            String googleName = googleAccount.getDisplayName();
+            String googleEmail = googleAccount.getEmail();
+            username.setText(googleEmail);
+            // Set the Google Account profile image
+            if (googleAccount.getPhotoUrl() != null) {
+                String imageUrl = googleAccount.getPhotoUrl().toString();
+                Glide.with(requireContext()).load(imageUrl).into(profileImage);
+            }
+        }
+
+        // Set profile picture
+
+        galleryLauncher = registerForActivityResult(new ActivityResultContracts.GetContent(), r->{
+            if(r != null){
+                //Get the selected image URI
+                selectedImageUri = r;
+                //Set the profile image with the selected image
+                Glide.with(requireContext()).load(selectedImageUri).into(profileImage);
+            }
+        });
+
+        // onClickListener for gallery button
+
+        gallerySelect.setOnClickListener(v->{
+            galleryLauncher.launch("image/*");
+        });
+
+        // Check if is logged with Google for logout
+
         if (googleAccount != null) {
             String googleName = googleAccount.getDisplayName();
             username.setText(googleName);
+            logout.setVisibility(View.VISIBLE);
+        } else {
+            logout.setVisibility(View.GONE);
+        }
+
+        if (firebaseAuth.getCurrentUser() != null){
+            String firebaseName = firebaseAuth.getCurrentUser().getDisplayName();
+            username.setText(firebaseName);
+            logout.setVisibility(View.VISIBLE);
         }
 
         logout.setOnClickListener(v -> {
@@ -84,5 +147,18 @@ public class ProfileFragment extends Fragment {
         Intent intent = new Intent(requireContext(), SignInActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == GALLERY_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            if (data != null) {
+                // Get the selected image URI
+                selectedImageUri = data.getData();
+                // Set the profile image with the selected image
+                Glide.with(requireContext()).load(selectedImageUri).into(profileImage);
+            }
+        }
     }
 }
