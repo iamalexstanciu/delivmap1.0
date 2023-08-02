@@ -34,4 +34,7 @@
     <string name="deliveryTest">This is the Delivery Fragment</string>
     <string name="messages_fragment">Messages fragment</string>
     <string name="traffic_fragment">Traffic Fragment</string>
+    <string name="firstname">Firstname</string>
+    <string name="lastname">Lastname</string>
+    <string name="pictureGallery">Select from Gallery</string>
 </resources>
