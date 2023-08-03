@@ -15,6 +15,7 @@ import com.upvisionmedia.delivmap10.R;
 import com.upvisionmedia.delivmap10.homepage.DelivFragment;
 import com.upvisionmedia.delivmap10.homepage.MessagesFragment;
 import com.upvisionmedia.delivmap10.homepage.TrafficFragment;
+import com.upvisionmedia.delivmap10.pages.sidebar.HomeFragment;
 import com.upvisionmedia.delivmap10.pages.sidebar.ProfileFragment;
 import com.upvisionmedia.delivmap10.pages.sidebar.SettingsFragment;
 import com.upvisionmedia.delivmap10.pages.sidebar.StatsFragment;
@@ -26,7 +27,6 @@ public class MainMenu extends AppCompatActivity {
 
     ImageView menuIcon;
     private DrawerLayout drawerLayout;
-
 
 
     @Override
@@ -48,12 +48,12 @@ public class MainMenu extends AppCompatActivity {
         LinearLayout layoutSettings = findViewById(R.id.layoutSettings);
         LinearLayout layoutStats = findViewById(R.id.layoutStatistics);
 
-        layoutDeliv.setOnClickListener( v-> replaceFragment(deliveries));
-        layoutMessages.setOnClickListener( v-> replaceFragment(messages));
-        layoutTraffic.setOnClickListener( v-> replaceFragment(traffic));
-        layoutProfile.setOnClickListener( v-> replaceFragment(profile));
-        layoutSettings.setOnClickListener( v-> replaceFragment(settings));
-        layoutStats.setOnClickListener( v-> replaceFragment(stats));
+        layoutDeliv.setOnClickListener(v -> replaceFragment(deliveries));
+        layoutMessages.setOnClickListener(v -> replaceFragment(messages));
+        layoutTraffic.setOnClickListener(v -> replaceFragment(traffic));
+        layoutProfile.setOnClickListener(v -> replaceFragment(profile));
+        layoutSettings.setOnClickListener(v -> replaceFragment(settings));
+        layoutStats.setOnClickListener(v -> replaceFragment(stats));
 
 
         // Display user email if available, or "Not logged in!" if not
@@ -68,30 +68,11 @@ public class MainMenu extends AppCompatActivity {
             }
         }
 
-        // open sidebar
-
-        menuIcon = findViewById(R.id.menuIcon);
-        drawerLayout= findViewById(R.id.drawer_layout);
-
-        menuIcon.setOnClickListener(v-> {
-            if(drawerLayout != null){
-                drawerLayout.openDrawer(GravityCompat.START);
-            }
-        });
-
-
-
     }
 
     private void replaceFragment(Fragment fragment) {
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container_main_menu, fragment)
-                .addToBackStack(null)
-                .commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_main_menu, fragment).addToBackStack(null).commit();
     }
-
-
-
 
 
 }

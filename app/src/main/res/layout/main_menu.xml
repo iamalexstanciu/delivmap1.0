@@ -40,7 +40,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/menuIcon"
+            android:id="@+id/menu_icon"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginEnd="15dp"
@@ -60,7 +60,7 @@
             android:background="@null"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/menuIcon">
+            app:layout_constraintTop_toBottomOf="@id/menu_icon">
 
             <EditText
                 android:layout_width="0dp"
@@ -114,7 +114,8 @@
                 app:layout_constraintDimensionRatio="H, 1:1"
                 app:layout_constraintEnd_toStartOf="@id/layoutProfile"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -148,7 +149,8 @@
                 app:layout_constraintDimensionRatio="H, 1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/layoutDeliveries"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -182,7 +184,8 @@
                 app:layout_constraintDimensionRatio="H, 1:1"
                 app:layout_constraintEnd_toStartOf="@id/layoutProfile"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/layoutDeliveries">
+                app:layout_constraintTop_toBottomOf="@id/layoutDeliveries"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -215,7 +218,8 @@
                 android:padding="15dp"
                 app:layout_constraintDimensionRatio="H, 1:1"
                 app:layout_constraintEnd_toEndOf="@id/layoutTraffic"
-                app:layout_constraintTop_toBottomOf="@id/layoutTraffic">
+                app:layout_constraintTop_toBottomOf="@id/layoutTraffic"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -260,7 +264,8 @@
                 app:layout_constraintDimensionRatio="H, 1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/layoutDeliveries"
-                app:layout_constraintTop_toBottomOf="@id/layoutProfile">
+                app:layout_constraintTop_toBottomOf="@id/layoutProfile"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:layout_width="100dp"
