@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,27 +12,32 @@
     <RelativeLayout
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:background="@drawable/back4"
+        android:background="@drawable/homeback"
         android:padding="16dp">
 
         <ImageView
-            android:layout_width="50dp"
             android:id="@+id/menu_icon"
-            android:layout_height="50dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="0dp"
             android:background="@drawable/menu"
-            android:textAlignment="center"
-            android:textStyle="bold"
+            android:contentDescription="@string/menu_icon"
             android:gravity="center"
-            android:contentDescription="@string/menu_icon" />
+            android:textAlignment="center" />
 
         <ImageView
             android:id="@+id/logo"
             android:layout_width="300dp"
-            android:layout_height="250dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="30dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="10dp"
             android:contentDescription="@string/logo"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo"
+            app:tint="@color/grey" />
 
         <TextView
             android:id="@+id/welcomeText"
@@ -41,7 +47,7 @@
             android:layout_below="@id/logo"
             android:layout_centerHorizontal="true"
             android:text="@string/motto_home"
-            android:textColor="@android:color/black"
+            android:textColor="@color/grey"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -53,7 +59,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/welcomeText"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="150dp"
+            android:textColor="@color/grey"
+            android:textSize="25sp"
+            android:layout_marginTop="100dp"
             android:background="@drawable/button_background"
             android:layout_marginEnd="94dp"
             android:text="@string/start_now" />

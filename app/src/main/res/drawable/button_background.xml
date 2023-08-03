@@ -29,7 +29,7 @@
         android:dashGap="180px"
         android:dashWidth="200px"
         android:width="1dp"
-        android:color="#a9a999"
+        android:color="@color/orange"
         />
 
 </shape>
