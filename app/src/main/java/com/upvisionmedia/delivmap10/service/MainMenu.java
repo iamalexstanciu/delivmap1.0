@@ -2,6 +2,7 @@ package com.upvisionmedia.delivmap10.service;
 
 import android.os.Bundle;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -17,6 +18,7 @@ import com.upvisionmedia.delivmap10.pages.sidebar.StatsFragment;
 public class MainMenu extends AppCompatActivity {
 
     private Fragment deliveries, messages, traffic, profile, settings, stats;
+    TextView usernameDisplayed;
 
 
     @Override
@@ -44,6 +46,13 @@ public class MainMenu extends AppCompatActivity {
         layoutProfile.setOnClickListener( v-> replaceFragment(profile));
         layoutSettings.setOnClickListener( v-> replaceFragment(settings));
         layoutStats.setOnClickListener( v-> replaceFragment(stats));
+
+
+        // diplay user email
+
+        String userEmail = getIntent().getStringExtra("user_email");
+        usernameDisplayed = findViewById(R.id.usernameDisplayed);
+        usernameDisplayed.setText(userEmail);
     }
 
     private void replaceFragment(Fragment fragment) {

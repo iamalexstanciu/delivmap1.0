@@ -53,8 +53,11 @@ public class SignInActivity extends AppCompatActivity {
                 if (!password.isEmpty()) {
                     auth.signInWithEmailAndPassword(email, password)
                             .addOnSuccessListener(authResult -> {
+                                String userEmail = authResult.getUser().getEmail();
                                 Toast.makeText(SignInActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(SignInActivity.this, MainMenu.class));
+                                Intent intent = (new Intent(SignInActivity.this, MainMenu.class));
+                                intent.putExtra("user_email", userEmail);
+                                startActivity(intent);
                                 finish();
                             }).addOnFailureListener(e -> Toast.makeText(SignInActivity.this, "Login Failed!", Toast.LENGTH_SHORT).show());
                 } else {
