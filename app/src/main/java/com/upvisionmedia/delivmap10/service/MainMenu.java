@@ -1,11 +1,15 @@
 package com.upvisionmedia.delivmap10.service;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.core.view.GravityCompat;
+
 
 import com.upvisionmedia.delivmap10.R;
 import com.upvisionmedia.delivmap10.homepage.DelivFragment;
@@ -19,6 +23,10 @@ public class MainMenu extends AppCompatActivity {
 
     private Fragment deliveries, messages, traffic, profile, settings, stats;
     TextView usernameDisplayed;
+
+    ImageView menuIcon;
+    private DrawerLayout drawerLayout;
+
 
 
     @Override
@@ -48,11 +56,31 @@ public class MainMenu extends AppCompatActivity {
         layoutStats.setOnClickListener( v-> replaceFragment(stats));
 
 
-        // diplay user email
-
+        // Display user email if available, or "Not logged in!" if not
         String userEmail = getIntent().getStringExtra("user_email");
         usernameDisplayed = findViewById(R.id.usernameDisplayed);
-        usernameDisplayed.setText(userEmail);
+        if (usernameDisplayed != null) {
+            if (userEmail != null && !userEmail.isEmpty()) {
+                usernameDisplayed.setText(userEmail);
+            } else {
+                String notLogged = "Not logged in!";
+                usernameDisplayed.setText(notLogged);
+            }
+        }
+
+        // open sidebar
+
+        menuIcon = findViewById(R.id.menuIcon);
+        drawerLayout= findViewById(R.id.drawer_layout);
+
+        menuIcon.setOnClickListener(v-> {
+            if(drawerLayout != null){
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
+
+
+
     }
 
     private void replaceFragment(Fragment fragment) {
@@ -61,6 +89,9 @@ public class MainMenu extends AppCompatActivity {
                 .addToBackStack(null)
                 .commit();
     }
+
+
+
 
 
 }
