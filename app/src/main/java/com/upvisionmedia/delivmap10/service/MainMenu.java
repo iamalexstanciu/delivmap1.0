@@ -28,8 +28,6 @@ public class MainMenu extends AppCompatActivity {
     private Fragment deliveries, messages, traffic, profile, settings, stats;
     TextView usernameDisplayed;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
