@@ -17,8 +17,6 @@ import com.upvisionmedia.delivmap10.service.user.SignInActivity;
 
 public class HomeFragment extends Fragment {
 
-    private DrawerLayout drawerLayout;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -32,19 +30,7 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
         });
 
-        ImageView menu = view.findViewById(R.id.menu_icon);
-        menu.setOnClickListener(v -> openSidebar());
-
         return view;
     }
 
-    public void openSidebar() {
-        if (drawerLayout != null) {
-            drawerLayout.openDrawer(GravityCompat.START);
-        }
-    }
-
-    public void setDrawerLayout(DrawerLayout drawerLayout) {
-        this.drawerLayout = drawerLayout;
-    }
 }

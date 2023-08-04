@@ -35,4 +35,6 @@
     <string name="firstname">Firstname</string>
     <string name="lastname">Lastname</string>
     <string name="pictureGallery">Select from Gallery</string>
+    <string name="close">Close</string>
+    <string name="open">Open</string>
 </resources>

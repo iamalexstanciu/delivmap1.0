@@ -1,16 +1,19 @@
 package com.upvisionmedia.delivmap10.service;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.core.view.GravityCompat;
 
 
+import com.google.android.material.navigation.NavigationView;
 import com.upvisionmedia.delivmap10.R;
 import com.upvisionmedia.delivmap10.homepage.DelivFragment;
 import com.upvisionmedia.delivmap10.homepage.MessagesFragment;
@@ -25,8 +28,6 @@ public class MainMenu extends AppCompatActivity {
     private Fragment deliveries, messages, traffic, profile, settings, stats;
     TextView usernameDisplayed;
 
-    ImageView menuIcon;
-    private DrawerLayout drawerLayout;
 
 
     @Override
