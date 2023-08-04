@@ -45,6 +45,8 @@ public class SignInActivity extends AppCompatActivity {
         TextView signUpRedirect = findViewById(R.id.registerRedirect);
         googleButton = findViewById(R.id.google_signin);
 
+        // Login via Firebase with email and password
+
         loginButton.setOnClickListener(view -> {
             String email = signInEmail.getText().toString();
             String password = signInPassword.getText().toString();
@@ -67,7 +69,17 @@ public class SignInActivity extends AppCompatActivity {
                 signInEmail.setError("Email cannot be empty!");
             }
         });
+
+        //
+
+        // Redirecting user to SignUp if is not already registered
+
         signUpRedirect.setOnClickListener(view -> startActivity(new Intent(SignInActivity.this, SignUpActivity.class)));
+
+        //
+
+
+        // Login via Google SignIn
 
         googleOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         googleClient = GoogleSignIn.getClient(this, googleOptions);
@@ -86,6 +98,8 @@ public class SignInActivity extends AppCompatActivity {
                 try {
                     task.getResult(ApiException.class);
                     finish();
+                    Intent intent = new Intent(SignInActivity.this, MainMenu.class);
+                    startActivity(intent);
                 } catch (ApiException e) {
                     Toast.makeText(SignInActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
                 }
