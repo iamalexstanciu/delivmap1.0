@@ -11,6 +11,7 @@ import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.upvisionmedia.delivmap10.R;
+import com.upvisionmedia.delivmap10.homepage.DelivFragment;
 import com.upvisionmedia.delivmap10.homepage.MessagesFragment;
 import com.upvisionmedia.delivmap10.pages.sidebar.HomeFragment;
 import com.upvisionmedia.delivmap10.pages.sidebar.ProfileFragment;
@@ -57,6 +58,12 @@ public class MainMenu extends AppCompatActivity {
                 return true;
             }
             return false;
+        });
+
+        // Floating button functionality
+
+        floatingActionButton.setOnClickListener(v->{
+            replaceFragment(new DelivFragment());
         });
 
 
