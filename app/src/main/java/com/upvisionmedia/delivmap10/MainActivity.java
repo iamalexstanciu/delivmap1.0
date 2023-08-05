@@ -3,7 +3,7 @@ package com.upvisionmedia.delivmap10;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.upvisionmedia.delivmap10.pages.sidebar.HomeFragment;
+import com.upvisionmedia.delivmap10.pages.fragments.HomeFragment;
 
 
 public class MainActivity extends AppCompatActivity{

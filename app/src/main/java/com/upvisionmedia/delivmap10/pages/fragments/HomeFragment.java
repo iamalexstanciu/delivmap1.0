@@ -1,4 +1,4 @@
-package com.upvisionmedia.delivmap10.pages.sidebar;
+package com.upvisionmedia.delivmap10.pages.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,10 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.upvisionmedia.delivmap10.R;

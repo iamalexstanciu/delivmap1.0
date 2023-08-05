@@ -22,7 +22,7 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.upvisionmedia.delivmap10.R;
-import com.upvisionmedia.delivmap10.service.MainMenu;
+import com.upvisionmedia.delivmap10.homepage.MainMenu;
 
 public class SignInActivity extends AppCompatActivity {
 

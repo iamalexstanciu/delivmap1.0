@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/homeback"
-    tools:context=".service.MainMenu">
+    tools:context=".homepage.MainMenu">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,8 +50,6 @@
         app:layout_constraintBottom_toTopOf="@id/bottomAppBar"
         app:layout_constraintTop_toBottomOf="@id/layoutHeader">
 
-
-
             <FrameLayout
                 android:id="@+id/fragment_container_main_menu"
                 android:layout_width="match_parent"
@@ -84,7 +82,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="16dp"
-                    android:background="@drawable/transparent_back"
+                    android:backgroundTint="@color/grey"
                     app:menu="@menu/nav_menu">
 
 
@@ -93,9 +91,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:background="@drawable/transparent_back"
                         android:contentDescription="@string/menu_icon"
-                        android:src="@drawable/ic_baseline_lock_24"
+                        android:src="@drawable/menudeliveries"
                         app:layout_anchor="@id/bottomAppBar" />
                 </com.google.android.material.bottomnavigation.BottomNavigationView>
 

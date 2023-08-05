@@ -1,4 +1,4 @@
-package com.upvisionmedia.delivmap10.service;
+package com.upvisionmedia.delivmap10.homepage;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,11 +11,10 @@ import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.upvisionmedia.delivmap10.R;
-import com.upvisionmedia.delivmap10.homepage.DelivFragment;
-import com.upvisionmedia.delivmap10.homepage.MessagesFragment;
-import com.upvisionmedia.delivmap10.pages.sidebar.HomeFragment;
-import com.upvisionmedia.delivmap10.pages.sidebar.ProfileFragment;
-import com.upvisionmedia.delivmap10.pages.sidebar.SettingsFragment;
+import com.upvisionmedia.delivmap10.pages.fragments.DelivFragment;
+import com.upvisionmedia.delivmap10.pages.fragments.MessagesFragment;
+import com.upvisionmedia.delivmap10.pages.fragments.ProfileFragment;
+import com.upvisionmedia.delivmap10.pages.fragments.SettingsFragment;
 
 public class MainMenu extends AppCompatActivity {
 

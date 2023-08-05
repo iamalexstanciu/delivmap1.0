@@ -1,4 +1,4 @@
-package com.upvisionmedia.delivmap10.homepage;
+package com.upvisionmedia.delivmap10.pages.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,13 +9,12 @@ import androidx.fragment.app.Fragment;
 
 import com.upvisionmedia.delivmap10.R;
 
-public class DelivFragment extends Fragment {
+public class StatsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_deliv, container, false);
+        return inflater.inflate(R.layout.fragment_stats, container, false);
     }
-
 }

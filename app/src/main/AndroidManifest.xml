@@ -44,19 +44,19 @@
         </activity>
 
         <activity android:name=".data.DestinationAdapter" />
-        <activity android:name=".service.MainMenu" />
-        <activity android:name=".pages.sidebar.AboutFragment" />
-        <activity android:name=".pages.sidebar.ContactFragment" />
-        <activity android:name=".pages.sidebar.StatsFragment" />
-        <activity android:name=".pages.sidebar.SettingsFragment" />
-        <activity android:name=".pages.sidebar.HomeFragment" />
-        <activity android:name=".pages.sidebar.ShareFragment" />
-        <activity android:name=".pages.sidebar.ProfileFragment" />
+        <activity android:name=".homepage.MainMenu" />
+        <activity android:name=".pages.fragments.AboutFragment" />
+        <activity android:name=".pages.fragments.ContactFragment" />
+        <activity android:name=".pages.fragments.StatsFragment" />
+        <activity android:name=".pages.fragments.SettingsFragment" />
+        <activity android:name=".pages.fragments.HomeFragment" />
+        <activity android:name=".pages.fragments.ShareFragment" />
+        <activity android:name=".pages.fragments.ProfileFragment" />
         <activity android:name=".service.user.SignInActivity" />
         <activity android:name=".service.user.SignUpActivity" />
-        <activity android:name=".homepage.DelivFragment" />
-        <activity android:name=".homepage.MessagesFragment" />
-        <activity android:name=".homepage.TrafficFragment" />
+        <activity android:name=".pages.fragments.DelivFragment" />
+        <activity android:name=".pages.fragments.MessagesFragment" />
+        <activity android:name=".pages.fragments.TrafficFragment" />
 
 
     </application>

@@ -1,4 +1,4 @@
-package com.upvisionmedia.delivmap10.homepage;
+package com.upvisionmedia.delivmap10.pages.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

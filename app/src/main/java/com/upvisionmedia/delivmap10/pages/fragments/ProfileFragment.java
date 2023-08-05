@@ -1,4 +1,4 @@
-package com.upvisionmedia.delivmap10.pages.sidebar;
+package com.upvisionmedia.delivmap10.pages.fragments;
 
 import android.app.Activity;
 import android.app.AlertDialog;
