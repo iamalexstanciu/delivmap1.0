@@ -33,9 +33,6 @@ public class ProfileFragment extends Fragment {
     FirebaseAuth firebaseAuth;
 
     private ImageView profileImage;
-    private EditText editTextFirstname, editTextLastName;
-
-    private Button gallerySelect;
 
     private Uri selectedImageUri;
     private ActivityResultLauncher<String> galleryLauncher;
@@ -52,9 +49,9 @@ public class ProfileFragment extends Fragment {
         TextView username = view.findViewById(R.id.usernameProfile);
         Button logout = view.findViewById(R.id.logoutButton);
         profileImage = view.findViewById(R.id.profileImage);
-        editTextFirstname = view.findViewById(R.id.editTextFirstname);
-        editTextLastName = view.findViewById(R.id.editTextLastName);
-        gallerySelect = view.findViewById(R.id.galleryButton);
+        EditText editTextFirstname = view.findViewById(R.id.editTextFirstname);
+        EditText editTextLastName = view.findViewById(R.id.editTextLastName);
+        Button gallerySelect = view.findViewById(R.id.galleryButton);
 
 
         googleOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();

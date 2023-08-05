@@ -24,6 +24,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.upvisionmedia.delivmap10.R;
 import com.upvisionmedia.delivmap10.homepage.MainMenu;
 
+import java.util.Objects;
+
 public class SignInActivity extends AppCompatActivity {
 
     private FirebaseAuth auth;
@@ -55,7 +57,7 @@ public class SignInActivity extends AppCompatActivity {
                 if (!password.isEmpty()) {
                     auth.signInWithEmailAndPassword(email, password)
                             .addOnSuccessListener(authResult -> {
-                                String userEmail = authResult.getUser().getEmail();
+                                String userEmail = Objects.requireNonNull(authResult.getUser()).getEmail();
                                 Toast.makeText(SignInActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                                 Intent intent = (new Intent(SignInActivity.this, MainMenu.class));
                                 intent.putExtra("user_email", userEmail);

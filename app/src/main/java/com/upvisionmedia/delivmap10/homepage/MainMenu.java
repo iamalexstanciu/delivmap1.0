@@ -7,7 +7,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.upvisionmedia.delivmap10.R;
@@ -18,7 +17,6 @@ import com.upvisionmedia.delivmap10.pages.fragments.SettingsFragment;
 
 public class MainMenu extends AppCompatActivity {
 
-    BottomAppBar bottomAppBar;
     BottomNavigationView bottomNavigationView;
     FloatingActionButton floatingActionButton;
 
@@ -31,7 +29,6 @@ public class MainMenu extends AppCompatActivity {
 
         // Bottom app bar functionality
 
-        bottomAppBar = findViewById(R.id.bottomAppBar);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         floatingActionButton =  findViewById(R.id.fab);
 
