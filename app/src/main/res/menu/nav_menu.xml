@@ -11,43 +11,27 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/nav_home"
             android:title="@string/home"/>
+
         <item
-            android:icon="@drawable/nav_profile"
-            android:id="@+id/nav_profile"
-            android:title="@string/profile"/>
+            android:id="@+id/nav_message"
+            android:icon="@drawable/messages"
+            android:title="@string/messages"/>
+
         <item
-            android:icon="@drawable/nav_stats"
-            android:id="@+id/nav_stats"
-            android:title="@string/statistics"/>
-        <item
-            android:icon="@drawable/nav_contact"
-            android:id="@+id/nav_contact"
-            android:title="@string/contact"/>
+            android:id="@+id/placeholder"
+            android:title=""
+            />
+
 
         <item
             android:icon="@drawable/nav_settings"
             android:id="@+id/nav_settings"
             android:title="@string/settings"/>
-
         <item
-            android:icon="@drawable/nav_share"
-            android:id="@+id/nav_share"
-            android:title="@string/share"/>
+            android:icon="@drawable/nav_profile"
+            android:id="@+id/nav_profile"
+            android:title="@string/profile"/>
 
-        <item
-            android:id="@+id/nav_about"
-            android:icon="@drawable/nav_about"
-            android:title="@string/about"/>
     </group>
-    <item
-        android:title="">
-
-        <menu>
-            <item
-                android:icon="@drawable/nav_logout"
-                android:title="@string/logout"/>
-        </menu>
-
-    </item>
 
 </menu>
