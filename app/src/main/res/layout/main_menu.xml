@@ -68,10 +68,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="bottom"
-        app:backgroundTint="#00FFFFFF"
+        app:backgroundTint="#68000000"
         app:fabCradleRoundedCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="BottomAppBar">
@@ -80,11 +81,10 @@
             android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#00FFFFFF"
-            android:layout_marginEnd="16dp"
-            app:itemBackground="@drawable/transparent_back"
-            app:menu="@menu/nav_menu"
+            android:layout_marginRight="16dp"
+            android:background="#5EFFF7F7"
             app:itemTextColor="@color/orange"
+            app:menu="@menu/nav_menu"
             tools:layout_editor_absoluteX="16dp">
 
 
@@ -95,7 +95,8 @@
                 android:layout_gravity="center"
                 android:contentDescription="@string/menu_icon"
                 android:src="@drawable/menudeliveries"
-                app:backgroundTint="#77FFFFFF"
+                app:backgroundTint="#80FFFFFF"
+                app:elevation="126dp"
                 app:layout_anchor="@id/bottomAppBar" />
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
