@@ -37,4 +37,7 @@
     <string name="pictureGallery">Select from Gallery</string>
     <string name="close">Close</string>
     <string name="open">Open</string>
+    <string name="cover_image">cover image</string>
+    <string name="phone">Phone</string>
+    <string name="email2">Email</string>
 </resources>

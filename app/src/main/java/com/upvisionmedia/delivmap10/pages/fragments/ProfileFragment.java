@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -45,11 +47,25 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
+        // Initialize the Spinner and ArrayAdapter
+        Spinner spinnerCountry = view.findViewById(R.id.spinnerCountry);
+        ArrayAdapter<CharSequence> countryAdapter = ArrayAdapter.createFromResource(
+                requireContext(), R.array.country_names, android.R.layout.simple_spinner_item
+        );
+
+        // Specify the layout to use when the list of choices appears
+        countryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinnerCountry.setAdapter(countryAdapter);
+
+
+
         // Now you can access views by their ID using 'view'
         Button logout = view.findViewById(R.id.logoutButton);
         profileImage = view.findViewById(R.id.profileImage);
         EditText editTextFirstname = view.findViewById(R.id.editTextFirstname);
         EditText editTextLastName = view.findViewById(R.id.editTextLastName);
+        EditText editTextEmail = view.findViewById(R.id.editTextEmail);
         Button gallerySelect = view.findViewById(R.id.galleryButton);
 
 
@@ -68,6 +84,10 @@ public class ProfileFragment extends Fragment {
             String[] names = googleName.split("\\s+");
             String firstName = names[0];
             String lastName = names[names.length - 1];
+
+            String email = googleAccount.getEmail();
+
+            editTextEmail.setText(email);
 
             editTextFirstname.setText(firstName);
             editTextLastName.setText(lastName);
