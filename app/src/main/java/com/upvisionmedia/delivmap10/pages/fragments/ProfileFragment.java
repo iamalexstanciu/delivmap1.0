@@ -38,6 +38,7 @@ public class ProfileFragment extends Fragment {
 
     private Uri selectedImageUri;
     private ActivityResultLauncher<String> galleryLauncher;
+
     private static final int GALLERY_REQUEST_CODE = 1001;
 
 
