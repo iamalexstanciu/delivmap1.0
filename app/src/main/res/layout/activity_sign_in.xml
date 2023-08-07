@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back4"
+    android:background="@drawable/homeback"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".service.user.SignInActivity"
@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="450dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/back8"
+            android:background="@drawable/loginback"
             android:orientation="vertical"
             android:padding="24dp">
 
@@ -40,11 +40,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="@color/grey"
                 android:drawableStart="@drawable/ic_baseline_person_24"
+                android:drawableTint="@color/grey"
                 android:drawablePadding="8dp"
                 android:hint="@string/email"
                 android:padding="8dp"
+                android:textColorHint="@color/black"
                 android:textColor="@color/black"
                 android:inputType="textEmailAddress"
                 android:autofillHints="" />
@@ -54,31 +56,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="@color/grey"
+                android:drawableTint="@color/grey"
                 android:drawableStart="@drawable/ic_baseline_lock_24"
                 android:drawablePadding="8dp"
                 android:hint="@string/password"
                 android:inputType="textPassword"
+                android:textColorHint="@color/black"
                 android:padding="8dp"
-                android:textColor="@color/black"
+                android:textColor="@color/grey"
                 android:autofillHints="" />
 
             <Button
                 android:id="@+id/sign_in_button"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_width="200dp"
+                android:layout_gravity="center"
+                android:layout_height="50dp"
                 android:layout_marginTop="30dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:background="@drawable/rounded_button_bg"
                 android:text="@string/sign_in"
                 android:textSize="18sp" />
 
             <com.developer.gbuttons.GoogleSignInButton
                 android:id="@+id/google_signin"
-                android:layout_width="match_parent"
+                android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:textAlignment="center" />
 
             <TextView
