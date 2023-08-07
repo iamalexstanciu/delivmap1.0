@@ -40,4 +40,13 @@
     <string name="cover_image">cover image</string>
     <string name="phone">Phone</string>
     <string name="email2">Email</string>
+
+    <string name="delivery_number_format">Delivery Number: %s</string>
+    <string name="created_at_format">Created At: %s</string>
+    <string name="sender_format">Sender: %s %s</string>
+    <string name="recipient_format">Recipient: %s %s</string>
+    <string name="recipient_address_format">Recipient Address: %s %s, %s, %s</string>
+    <string name="box_number_format">Box Number: %s</string>
+    <string name="recipient_phone_format">Recipient Phone: %s</string>
+
 </resources>
