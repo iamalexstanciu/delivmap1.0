@@ -19,7 +19,6 @@ public class MainMenu extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     FloatingActionButton floatingActionButton;
-
     TextView usernameDisplayed;
 
     @Override
@@ -75,6 +74,7 @@ public class MainMenu extends AppCompatActivity {
                 usernameDisplayed.setText(notLogged);
             }
         }
+
 
     }
 

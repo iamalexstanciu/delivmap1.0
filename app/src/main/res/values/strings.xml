@@ -22,7 +22,7 @@
     <string name="already_registered_sign_in">Already registered? Sign in</string>
     <string name="traffic">Traffic</string>
     <string name="search_delivery">Search delivery</string>
-    <string name="hello">Hello</string>
+    <string name="hello">Hello, </string>
     <string name="deliveries">Deliveries</string>
     <string name="messages">Messages</string>
     <string name="statistics">Statistics</string>

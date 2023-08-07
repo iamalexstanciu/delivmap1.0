@@ -46,7 +46,6 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         // Now you can access views by their ID using 'view'
-        TextView username = view.findViewById(R.id.usernameProfile);
         Button logout = view.findViewById(R.id.logoutButton);
         profileImage = view.findViewById(R.id.profileImage);
         EditText editTextFirstname = view.findViewById(R.id.editTextFirstname);
@@ -64,8 +63,14 @@ public class ProfileFragment extends Fragment {
 
         if (googleAccount != null) {
             String googleName = googleAccount.getDisplayName();
-            String googleEmail = googleAccount.getEmail();
-            username.setText(googleEmail);
+
+            assert googleName != null;
+            String[] names = googleName.split("\\s+");
+            String firstName = names[0];
+            String lastName = names[names.length - 1];
+
+            editTextFirstname.setText(firstName);
+            editTextLastName.setText(lastName);
             // Set the Google Account profile image
             if (googleAccount.getPhotoUrl() != null) {
                 String imageUrl = googleAccount.getPhotoUrl().toString();
@@ -93,16 +98,12 @@ public class ProfileFragment extends Fragment {
         // Check if is logged with Google for logout
 
         if (googleAccount != null) {
-            String googleName = googleAccount.getDisplayName();
-            username.setText(googleName);
             logout.setVisibility(View.VISIBLE);
         } else {
             logout.setVisibility(View.GONE);
         }
 
         if (firebaseAuth.getCurrentUser() != null){
-            String firebaseName = firebaseAuth.getCurrentUser().getDisplayName();
-            username.setText(firebaseName);
             logout.setVisibility(View.VISIBLE);
         }
 

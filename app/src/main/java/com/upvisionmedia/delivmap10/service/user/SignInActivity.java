@@ -96,11 +96,13 @@ public class SignInActivity extends AppCompatActivity {
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
             if (result.getResultCode() == Activity.RESULT_OK){
                 Intent data = result.getData();
-                Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
                 try {
-                    task.getResult(ApiException.class);
+                    Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+                    GoogleSignInAccount googleAccount = task.getResult(ApiException.class);
                     finish();
                     Intent intent = new Intent(SignInActivity.this, MainMenu.class);
+                    String userEmailGoogle = googleAccount.getEmail();
+                    intent.putExtra("user_email", userEmailGoogle);
                     startActivity(intent);
                 } catch (ApiException e) {
                     Toast.makeText(SignInActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
