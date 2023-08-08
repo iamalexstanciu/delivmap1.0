@@ -24,6 +24,8 @@ public class DelivFragment extends Fragment {
     private TextView recipient;
     private TextView recipientAddress;
     private TextView recipientPhoneNumber;
+    private TextView createdAt;
+    private TextView boxNumber;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,11 +36,11 @@ public class DelivFragment extends Fragment {
         // Text view fields
 
         deliverNumber = view.findViewById(R.id.deliveryNumberTextView);
-        TextView createdAt = view.findViewById(R.id.createdAtTextView);
+        createdAt = view.findViewById(R.id.createdAtTextView);
         sender = view.findViewById(R.id.senderTextView);
         recipient = view.findViewById(R.id.recipientTextView);
         recipientAddress = view.findViewById(R.id.recipientAddressTextView);
-        TextView boxNumber = view.findViewById(R.id.boxNumberTextView);
+        boxNumber = view.findViewById(R.id.boxNumberTextView);
         recipientPhoneNumber = view.findViewById(R.id.recipientPhoneNumberTextView);
 
         loadDataFromJson();
@@ -61,7 +63,8 @@ public class DelivFragment extends Fragment {
 
 
                 String deliveryNumber = jsonObject.get("delivery_number").getAsString();
-                String createdAt = jsonObject.get("create_at").getAsString();
+                String createdAtValue = jsonObject.get("create_at").getAsString();
+                String boxNumberValue = jsonObject.get("box_number").getAsString();
                 String senderFirstName = jsonObject.get("sender_firstname").getAsString();
                 String senderLastName = jsonObject.get("sender_lastname").getAsString();
                 String recipientFirstName = jsonObject.get("recipient_firstname").getAsString();
@@ -70,7 +73,6 @@ public class DelivFragment extends Fragment {
                 String recipientStreet = jsonObject.get("recipient_street").getAsString();
                 String recipientStreetNumber = jsonObject.get("recipient_street_number").getAsString();
                 String recipientZipcode = jsonObject.get("recipient_zipcode").getAsString();
-                String boxNumber = jsonObject.get("box_number").getAsString();
                 String senderPhoneNumber = jsonObject.get("sender_phonenumber").getAsString();
 
                 String formattedCreatedAt = getString(R.string.created_at_format, createdAt);
