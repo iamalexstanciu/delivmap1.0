@@ -13,7 +13,6 @@ import com.upvisionmedia.delivmap10.R;
 import com.upvisionmedia.delivmap10.pages.fragments.DelivFragment;
 import com.upvisionmedia.delivmap10.pages.fragments.MessagesFragment;
 import com.upvisionmedia.delivmap10.pages.fragments.ProfileFragment;
-import com.upvisionmedia.delivmap10.pages.fragments.SettingsFragment;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -43,7 +42,8 @@ public class MainMenu extends AppCompatActivity {
                 return true;
             } else if (item.getItemId() == R.id.nav_settings) {
                 // Handle profile button click
-                replaceFragment(new SettingsFragment()); // Replace with the appropriate fragment
+               Intent intent = new Intent(this, SettingsActivity.class);
+               startActivity(intent);
                 return true;
             }
 

@@ -45,12 +45,12 @@
 
         <activity android:name=".data.DestinationAdapter" />
         <activity android:name=".homepage.MainMenu" />
-        <activity android:name=".pages.fragments.AboutFragment" />
-        <activity android:name=".pages.fragments.ContactFragment" />
+        <activity android:name=".pages.fragments.settings.AboutFragment" />
+        <activity android:name=".pages.fragments.settings.ContactFragment" />
         <activity android:name=".pages.fragments.StatsFragment" />
-        <activity android:name=".pages.fragments.SettingsFragment" />
+        <activity android:name=".homepage.SettingsActivity" />
         <activity android:name=".pages.fragments.HomeFragment" />
-        <activity android:name=".pages.fragments.ShareFragment" />
+        <activity android:name=".pages.fragments.settings.ShareFragment" />
         <activity android:name=".pages.fragments.ProfileFragment" />
         <activity android:name=".service.user.SignInActivity" />
         <activity android:name=".service.user.SignUpActivity" />
