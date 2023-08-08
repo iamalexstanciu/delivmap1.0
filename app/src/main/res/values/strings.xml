@@ -26,7 +26,6 @@
     <string name="deliveries">Deliveries</string>
     <string name="messages">Messages</string>
     <string name="statistics">Statistics</string>
-    <string name="menu_icon">menu icon</string>
     <string name="motto_home">Navigate Efficiently, Deliver Seamlessly</string>
     <string name="start_now">Start Now</string>
     <string name="deliveryTest">This is the Delivery Fragment</string>
@@ -48,5 +47,6 @@
     <string name="recipient_address_format">Recipient Address: %s %s, %s, %s</string>
     <string name="box_number_format">Box Number: %s</string>
     <string name="recipient_phone_format">Recipient Phone: %s</string>
+    <string name="menu_icon">menu icon</string>
 
 </resources>
