@@ -2,8 +2,11 @@ package com.upvisionmedia.delivmap10.homepage;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -13,21 +16,20 @@ import com.upvisionmedia.delivmap10.R;
 import com.upvisionmedia.delivmap10.pages.fragments.DelivFragment;
 import com.upvisionmedia.delivmap10.pages.fragments.ProfileFragment;
 
-public class MainMenu extends AppCompatActivity {
+public class MessagesActivity extends AppCompatActivity {
 
-    BottomNavigationView bottomNavigationView;
-    FloatingActionButton floatingActionButton;
-    TextView usernameDisplayed;
+    private BottomNavigationView bottomNavigationView;
+    private FloatingActionButton floatingActionButton;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_menu);
+        setContentView(R.layout.messages_activity);
 
         // Bottom app bar functionality
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        floatingActionButton =  findViewById(R.id.fab);
+        floatingActionButton = findViewById(R.id.fab);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.nav_home) {
@@ -37,17 +39,14 @@ public class MainMenu extends AppCompatActivity {
                 return true;
             } else if (item.getItemId() == R.id.nav_message) {
                 // Handle messages button click
-                Intent intent = new Intent(this, MessagesActivity.class);
-                startActivity(intent);
-                return true;
+               Intent intent = new Intent(this, MessagesActivity.class);
+               startActivity(intent);
             } else if (item.getItemId() == R.id.nav_settings) {
                 // Handle profile button click
-               Intent intent = new Intent(this, SettingsActivity.class);
-               startActivity(intent);
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
                 return true;
-            }
-
-            else if (item.getItemId() == R.id.nav_profile) {
+            } else if (item.getItemId() == R.id.nav_profile) {
 
                 replaceFragment(new ProfileFragment()); // Replace with the appropriate fragment
                 return true;
@@ -57,24 +56,9 @@ public class MainMenu extends AppCompatActivity {
 
         // Floating button functionality
 
-        floatingActionButton.setOnClickListener(v->{
+        floatingActionButton.setOnClickListener(v -> {
             replaceFragment(new DelivFragment());
         });
-
-
-
-        // Display user email if available, or "Not logged in!" if not
-        String userEmail = getIntent().getStringExtra("user_email");
-        usernameDisplayed = findViewById(R.id.usernameDisplayed);
-        if (usernameDisplayed != null) {
-            if (userEmail != null && !userEmail.isEmpty()) {
-                usernameDisplayed.setText(userEmail);
-            } else {
-                String notLogged = "Not logged in!";
-                usernameDisplayed.setText(notLogged);
-            }
-        }
-
 
     }
 
@@ -84,6 +68,5 @@ public class MainMenu extends AppCompatActivity {
                 .addToBackStack(null)
                 .commit();
     }
-
 
 }

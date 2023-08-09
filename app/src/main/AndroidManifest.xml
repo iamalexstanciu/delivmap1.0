@@ -55,7 +55,7 @@
         <activity android:name=".service.user.SignInActivity" />
         <activity android:name=".service.user.SignUpActivity" />
         <activity android:name=".pages.fragments.DelivFragment" />
-        <activity android:name=".pages.fragments.MessagesFragment" />
+        <activity android:name=".homepage.MessagesActivity" />
         <activity android:name=".pages.fragments.TrafficFragment" />
 
 
