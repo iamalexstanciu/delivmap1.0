@@ -11,7 +11,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.upvisionmedia.delivmap10.R;
 import com.upvisionmedia.delivmap10.pages.fragments.DelivFragment;
-import com.upvisionmedia.delivmap10.pages.fragments.ProfileFragment;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -27,7 +26,7 @@ public class MainMenu extends AppCompatActivity {
         // Bottom app bar functionality
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        floatingActionButton =  findViewById(R.id.fab);
+        floatingActionButton = findViewById(R.id.fab);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.nav_home) {
@@ -41,15 +40,14 @@ public class MainMenu extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             } else if (item.getItemId() == R.id.nav_settings) {
-                // Handle profile button click
-               Intent intent = new Intent(this, SettingsActivity.class);
-               startActivity(intent);
+                // Handle settings button click
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
                 return true;
-            }
-
-            else if (item.getItemId() == R.id.nav_profile) {
-
-                replaceFragment(new ProfileFragment()); // Replace with the appropriate fragment
+            } else if (item.getItemId() == R.id.nav_profile) {
+                // Handle profile button click
+                Intent intent = new Intent(this, ProfileActivity.class);
+                startActivity(intent);
                 return true;
             }
             return false;
@@ -57,10 +55,9 @@ public class MainMenu extends AppCompatActivity {
 
         // Floating button functionality
 
-        floatingActionButton.setOnClickListener(v->{
+        floatingActionButton.setOnClickListener(v -> {
             replaceFragment(new DelivFragment());
         });
-
 
 
         // Display user email if available, or "Not logged in!" if not

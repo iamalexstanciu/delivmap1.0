@@ -51,7 +51,7 @@
         <activity android:name=".homepage.SettingsActivity" />
         <activity android:name=".pages.fragments.HomeFragment" />
         <activity android:name=".pages.fragments.settings.ShareFragment" />
-        <activity android:name=".pages.fragments.ProfileFragment" />
+        <activity android:name=".homepage.ProfileActivity" />
         <activity android:name=".service.user.SignInActivity" />
         <activity android:name=".service.user.SignUpActivity" />
         <activity android:name=".pages.fragments.DelivFragment" />

@@ -11,7 +11,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.upvisionmedia.delivmap10.R;
 import com.upvisionmedia.delivmap10.pages.fragments.DelivFragment;
-import com.upvisionmedia.delivmap10.pages.fragments.ProfileFragment;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -41,15 +40,14 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             } else if (item.getItemId() == R.id.nav_settings) {
-                // Handle profile button click
+                // Handle settings button click
                 Intent intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
                 return true;
-            }
-
-            else if (item.getItemId() == R.id.nav_profile) {
-
-                replaceFragment(new ProfileFragment()); // Replace with the appropriate fragment
+            } else if (item.getItemId() == R.id.nav_profile) {
+                // Handle profile button click
+                Intent intent = new Intent(this, ProfileActivity.class);
+                startActivity(intent);
                 return true;
             }
             return false;
