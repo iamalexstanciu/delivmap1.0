@@ -35,70 +35,70 @@
 
         <Button
             android:id="@+id/buttonAccount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_centerHorizontal="true"
+            android:background="@drawable/account_settings"
             android:layout_marginTop="20dp"
-            android:text="A"
             app:layout_constraintEnd_toEndOf="@+id/buttonGeneral"
             app:layout_constraintStart_toStartOf="@+id/buttonGeneral"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/buttonGeneral"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:text="G"
+            android:background="@drawable/settings_settings"
             app:layout_constraintEnd_toEndOf="@+id/buttonNotifications"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/buttonAccount" />
 
         <Button
             android:id="@+id/buttonNotifications"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:text="N"
+            android:background="@drawable/notifications_settings"
             app:layout_constraintTop_toBottomOf="@id/buttonGeneral" />
 
         <Button
             android:id="@+id/buttonSupport"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:text="S"
+            android:background="@drawable/support_settings"
             app:layout_constraintTop_toBottomOf="@id/buttonNotifications" />
 
         <Button
             android:id="@+id/buttonTheme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:text="T"
+            android:background="@drawable/theme_settings"
             app:layout_constraintTop_toBottomOf="@id/buttonSupport" />
 
         <Button
             android:id="@+id/buttonAbout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:text="A"
+            android:background="@drawable/about_settings"
             app:layout_constraintTop_toBottomOf="@id/buttonTheme" />
 
 
         <Button
             android:id="@+id/buttonLanguage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:text="L"
+            android:background="@drawable/language_settings"
             app:layout_constraintTop_toBottomOf="@id/buttonAbout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -110,8 +110,8 @@
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/textview_settings"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/leftButtonsLayout"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/bottomAppBar"
+        app:layout_constraintStart_toEndOf="@+id/leftButtonsLayout" />
 
 
     <com.google.android.material.bottomappbar.BottomAppBar
