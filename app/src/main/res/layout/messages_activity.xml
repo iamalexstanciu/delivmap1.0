@@ -53,16 +53,6 @@
             app:menu="@menu/nav_menu">
 
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/menu_icon"
-                android:src="@drawable/menudeliveries"
-                app:backgroundTint="#90EF6C00"
-                app:elevation="126dp"
-                app:layout_anchor="@id/bottomAppBar" />
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     </com.google.android.material.bottomappbar.BottomAppBar>

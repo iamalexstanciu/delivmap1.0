@@ -53,18 +53,7 @@ public class SettingsActivity extends AppCompatActivity {
             return false;
         });
 
-        // Floating button functionality
-
-        floatingActionButton.setOnClickListener(v->{
-            replaceFragment(new DelivFragment());
-        });
 
     }
 
-    private void replaceFragment(Fragment fragment) {
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container_main_menu, fragment)
-                .addToBackStack(null)
-                .commit();
-    }
 }
