@@ -15,7 +15,6 @@ import com.upvisionmedia.delivmap10.pages.fragments.DelivFragment;
 public class MessagesActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
-    private FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,7 +24,6 @@ public class MessagesActivity extends AppCompatActivity {
         // Bottom app bar functionality
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        floatingActionButton = findViewById(R.id.fab);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.nav_home) {

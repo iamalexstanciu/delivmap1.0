@@ -32,7 +32,6 @@ public class ProfileActivity extends Activity {
     GoogleSignInOptions googleOptions;
     FirebaseAuth firebaseAuth;
     private BottomNavigationView bottomNavigationView;
-    private FloatingActionButton floatingActionButton;
 
 
     private ImageView profileImage;
@@ -47,7 +46,6 @@ public class ProfileActivity extends Activity {
         // Bottom app bar functionality
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        floatingActionButton = findViewById(R.id.fab);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.nav_home) {
