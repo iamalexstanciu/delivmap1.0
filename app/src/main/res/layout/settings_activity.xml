@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/homeback"
-    tools:context=".homepage.SettingsActivity" >
+    tools:context=".homepage.SettingsActivity">
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -18,7 +17,7 @@
         app:layout_constraintTop_toBottomOf="parent">
 
         <FrameLayout
-            android:id="@+id/fragment_container_main_menu"
+            android:id="@+id/fragment_container_settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -27,11 +26,110 @@
             app:layout_constraintTop_toBottomOf="@id/layout_Header"
             tools:ignore="NotSibling" />
 
+
     </ScrollView>
+
+    <TextView
+        android:id="@+id/textview_settings"
+        android:layout_width="0dp"
+        android:layout_height="206dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="@string/application_settings"
+        android:textColor="@color/grey"
+        android:textSize="31sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_marginStart="25dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        >
+
+
+        <Button
+            android:id="@+id/buttonAccount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/account"
+            app:layout_constraintEnd_toEndOf="@+id/buttonGeneral"
+            app:layout_constraintStart_toStartOf="@+id/buttonGeneral"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/general"
+            app:layout_constraintEnd_toEndOf="@+id/buttonNotifications"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonAccount" />
+
+        <Button
+            android:id="@+id/buttonNotifications"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/notifications"
+            app:layout_constraintTop_toBottomOf="@id/buttonGeneral" />
+
+        <Button
+            android:id="@+id/buttonSupport"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/general"
+            app:layout_constraintTop_toBottomOf="@id/buttonNotifications" />
+
+        <Button
+            android:id="@+id/buttonTheme"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/theme"
+            app:layout_constraintTop_toBottomOf="@id/buttonSupport" />
+
+        <Button
+            android:id="@+id/buttonAbout"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/about"
+            app:layout_constraintTop_toBottomOf="@id/buttonTheme" />
+
+
+        <Button
+            android:id="@+id/buttonLanguage"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/language"
+            app:layout_constraintTop_toBottomOf="@id/buttonAbout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
-        android:layout_width="409dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_gravity="bottom"
         android:layout_marginBottom="4dp"
@@ -44,16 +142,23 @@
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginEnd="16dp"
             android:layout_marginStart="0dp"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/rounded_background"
             app:itemTextColor="@color/orange"
-            app:menu="@menu/nav_menu">
+            app:menu="@menu/nav_menu_no_button_central">
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     </com.google.android.material.bottomappbar.BottomAppBar>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left"
+        app:constraint_referenced_ids="constraintLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -48,5 +48,11 @@
     <string name="box_number_format">Box Number: %s</string>
     <string name="recipient_phone_format">Recipient Phone: %s</string>
     <string name="menu_icon">menu icon</string>
+    <string name="account">Account</string>
+    <string name="general">General</string>
+    <string name="notifications">Notifications</string>
+    <string name="theme">Theme</string>
+    <string name="language">Language</string>
+    <string name="application_settings">Application Settings</string>
 
 </resources>
