@@ -74,11 +74,6 @@ public class ProfileActivity extends Activity {
             return false;
         });
 
-//        floatingActionButton.setOnClickListener(v -> {
-//            Intent intent = new Intent(this, DelivActivity.class);
-//            startActivity(intent);
-//        });
-
         // Initialize the Spinner and ArrayAdapter
         Spinner spinnerCountry = findViewById(R.id.spinnerCountry);
         ArrayAdapter<CharSequence> countryAdapter = ArrayAdapter.createFromResource(
