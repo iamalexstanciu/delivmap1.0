@@ -1,7 +1,7 @@
                                                           DelivMap 🚚🗺️
 
                                                         
-  ![Imgur](https://i.imgur.com/IHBBV8Q.png)
+ ![Imgur](https://i.imgur.com/hWL8oEJ.png)
 
 DelivMap is an Android Studio Java-based application designed to streamline the daily operations of couriers. This app serves as a comprehensive organizer, helping couriers manage their deliveries efficiently by optimizing routes and saving valuable time. 📦⏰
 
