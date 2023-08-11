@@ -46,7 +46,7 @@
         <activity android:name=".data.DestinationAdapter" />
         <activity android:name=".homepage.MainMenu" />
         <activity android:name=".pages.fragments.settings.AboutFragment" />
-        <activity android:name=".pages.fragments.settings.ContactFragment" />
+        <activity android:name=".pages.fragments.settings.SupportFragment" />
         <activity android:name=".pages.fragments.StatsFragment" />
         <activity android:name=".homepage.SettingsActivity" />
         <activity android:name=".pages.fragments.HomeFragment" />

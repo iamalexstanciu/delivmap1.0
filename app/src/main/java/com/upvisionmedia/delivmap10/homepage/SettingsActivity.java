@@ -15,11 +15,16 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.upvisionmedia.delivmap10.R;
 import com.upvisionmedia.delivmap10.pages.fragments.DelivFragment;
 import com.upvisionmedia.delivmap10.pages.fragments.settings.AboutFragment;
+import com.upvisionmedia.delivmap10.pages.fragments.settings.AccountFragment;
+import com.upvisionmedia.delivmap10.pages.fragments.settings.GeneralFragment;
+import com.upvisionmedia.delivmap10.pages.fragments.settings.LanguageFragment;
+import com.upvisionmedia.delivmap10.pages.fragments.settings.NotificationsFragment;
+import com.upvisionmedia.delivmap10.pages.fragments.settings.SupportFragment;
+import com.upvisionmedia.delivmap10.pages.fragments.settings.ThemeFragment;
 
 public class SettingsActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    FloatingActionButton floatingActionButton;
 
 
     @Override
@@ -30,9 +35,21 @@ public class SettingsActivity extends AppCompatActivity {
         // Buttons functionality
 
         Button buttonAccount = findViewById(R.id.buttonAccount);
+        Button buttonAbout = findViewById(R.id.buttonAbout);
+        Button buttonSupport = findViewById(R.id.buttonSupport);
+        Button buttonGeneral = findViewById(R.id.buttonGeneral);
+        Button buttonLanguage = findViewById(R.id.buttonLanguage);
+        Button buttonTheme = findViewById(R.id.buttonTheme);
+        Button buttonNotifications = findViewById(R.id.buttonNotifications);
 
 
-        buttonAccount.setOnClickListener(view -> loadFragment(new AboutFragment()));
+        buttonAbout.setOnClickListener(view -> loadFragment(new AboutFragment()));
+        buttonAccount.setOnClickListener(view -> loadFragment(new AccountFragment()));
+        buttonSupport.setOnClickListener(view -> loadFragment(new SupportFragment()));
+        buttonGeneral.setOnClickListener(view -> loadFragment(new GeneralFragment()));
+        buttonLanguage.setOnClickListener(view -> loadFragment(new LanguageFragment()));
+        buttonTheme.setOnClickListener(view -> loadFragment(new ThemeFragment()));
+        buttonNotifications.setOnClickListener(view -> loadFragment(new NotificationsFragment()));
 
 
 
